@@ -1,0 +1,15 @@
+<resources>
+
+
+    <string name="app_name">Acceuil</string>
+
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="title_slide1">Bienvenue sur Wayfinding</string>
+    <string name="desc_slide1">Votre avenir commence ici</string>
+    <string name="title_slide2"> Faites le bon choix</string>
+    <string name="desc_slide2">Examinez parmi des millions de choix </string>
+    <string name="title_slide3">Vous êtes au bon endroit</string>
+    <string name="desc_slide3"> Alors Connectez Vous et Creez Votre Futur</string>
+</resources>

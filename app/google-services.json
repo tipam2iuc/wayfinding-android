@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "94481824115",
+    "firebase_url": "https://introslide-4f20b.firebaseio.com",
+    "project_id": "introslide-4f20b",
+    "storage_bucket": "introslide-4f20b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94481824115:android:1a6fe5cd425fff59",
+        "android_client_info": {
+          "package_name": "e.plass.introslide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94481824115-dlpd87p0pu0bnbqfd6ejnffcjefs0pvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATXPpPTdUurD3X2cM6ho4cjv07pnRfOZc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
