@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/arr"
+    tools:context=".Inscription">
+
+
+    <LinearLayout
+        android:id="@+id/linear21"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/logo"
+            android:layout_marginVertical="25dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linear21"
+        android:paddingRight="25dp"
+        android:paddingLeft="25dp"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/TxtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+           android:background="@drawable/edit_round"
+            android:inputType="textEmailAddress"
+            android:hint="Email ou numero de téléphone"
+            android:textColorHint="#0C3C87"
+             android:layout_marginBottom="10dp"
+            android:padding="10dp"
+
+            android:textColor="#0C3C87"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_round"
+            android:hint="Mot de passe"
+            android:inputType="textPassword"
+            android:textColorHint="#0C3C87"
+            android:textColor="#0C3C87"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            />
+
+        <EditText
+            android:id="@+id/passwordhint"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="#fff"
+            android:background="@drawable/edit_round"
+            android:hint="Confirmez Mot de passe"
+            android:inputType="textPassword"
+            android:layout_marginTop="10dp"
+            android:textColorHint="#0C3C87"
+            android:textColor="#0C3C87"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="25dp"
+        android:gravity="right"
+
+
+        app:layout_constraintTop_toBottomOf="@id/linear22">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:linksClickable="false"
+            android:text=""
+            android:textColor="#fff"
+            app:layout_constraintTop_toBottomOf="@id/password"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linear23"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Inscription"
+            android:background="@drawable/round2"
+            android:textColor="#ffff"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:drawableLeft="@drawable/subscribe"
+
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ou"
+            android:textColor="#fff"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="facebook"
+                android:background="@drawable/round2"
+                android:textColor="#fff"
+                android:padding="10dp"
+                android:drawableLeft="@drawable/face"
+
+
+
+                />
+            <Button
+                android:id="@+id/btn_inscription_google"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="Google"
+                android:background="@drawable/round4"
+                android:textColor="#F7370D"
+                android:padding="10dp"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/google"
+
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copyright Wayfinding 2019"
+            android:textColor="#fff"
+            android:textSize="10dp"/>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
