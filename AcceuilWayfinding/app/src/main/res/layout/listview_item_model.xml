@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginTop="6dp"
+    >
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content_item_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_profile"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Nom de l'école"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/circleImageView"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <TextView
+            android:id="@+id/textView_date_creation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Dat de création"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_name"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name" />
+
+        <TextView
+            android:id="@+id/textView_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:maxLength="50"
+            android:text="Desciption"
+            android:textSize="8sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView_item_plus_info"
+            app:layout_constraintStart_toStartOf="@+id/textView_date_creation"
+            app:layout_constraintTop_toBottomOf="@+id/textView_date_creation" />
+
+        <ImageButton
+            android:id="@+id/imageButton_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_description"
+            app:layout_constraintTop_toBottomOf="@+id/textView_description"
+            app:srcCompat="@drawable/ic_star_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textView_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton_note"
+            app:layout_constraintStart_toEndOf="@+id/imageButton_note"
+            app:layout_constraintTop_toTopOf="@+id/imageButton_note" />
+
+        <TextView
+            android:id="@+id/textView_item_plus_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/more"
+            android:textColor="@color/applicatioTheme"
+            android:textSize="8sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_description"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

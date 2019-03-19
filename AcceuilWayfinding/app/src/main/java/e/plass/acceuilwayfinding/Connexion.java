@@ -105,6 +105,7 @@ public class Connexion extends AppCompatActivity implements View.OnClickListener
                     if (task.isSuccessful()) {
                         finish();
                         startActivity(new Intent(getApplicationContext(), Profile.class));
+
                     } else {
 
                         Toast.makeText(getApplicationContext(), "Identifiants ou mot de passe Incorrects", Toast.LENGTH_SHORT).show();
@@ -118,7 +119,7 @@ public class Connexion extends AppCompatActivity implements View.OnClickListener
 
         }
 
-        
+
     @Override
     public void onClick (View v){
         if (v == btnConnexion) {
