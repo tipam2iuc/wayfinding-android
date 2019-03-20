@@ -9,8 +9,8 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imagesplash"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="288dp"
+        android:layout_height="288dp"
         android:src="@drawable/giflogo"
         android:layout_centerInParent="true"
         android:scaleType="fitXY"/>
