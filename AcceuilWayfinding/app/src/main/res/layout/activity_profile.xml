@@ -8,207 +8,97 @@
     android:background="@color/white"
     tools:context=".Profile">
 
-    <include
-        android:id="@+id/appbarlayout"
-        layout="@layout/action_bar_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraint_layout_onglet"
+        android:id="@+id/constraint_draw"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/bottomNavigationView_menu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:itemIconTint="@color/nav_item_color"
-            app:itemTextColor="@color/nav_item_color"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/nav_items">
-
-        </android.support.design.widget.BottomNavigationView>
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#312783"
-        android:padding="5dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:elevation="10dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView_application_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="WAYFINDING"
-            android:textColor="#fff"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton_burgger"
-            app:layout_constraintStart_toEndOf="@+id/imageView2_logo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="70dp"
+            android:fitsSystemWindows="true">
 
-        <ImageView
-            android:id="@+id/imageView2_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_application_name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView_application_name"
-            app:srcCompat="@drawable/ic_logo"
-            tools:ignore="VectorDrawableCompat" />
+            <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/imageButton_burgger"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="#03FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_application_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView_application_name"
-            app:srcCompat="@drawable/ic_hamburger_icons_plan_icons_plan"
-            tools:ignore="VectorDrawableCompat" />
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <include
+                        android:id="@+id/appbarlayout"
+                        layout="@layout/action_bar_layout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/constraint_layout_onglet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <android.support.design.widget.BottomNavigationView
+                            android:id="@+id/bottomNavigationView_menu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            app:itemIconTint="@color/nav_item_color"
+                            app:itemTextColor="@color/nav_item_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:menu="@menu/nav_items">
+
+                        </android.support.design.widget.BottomNavigationView>
+                    </android.support.constraint.ConstraintLayout>
+
+
+                    <FrameLayout
+                        android:id="@+id/frame_nav"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:elevation="3dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toTopOf="@+id/constraint_layout_onglet"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/appbarlayout">
+
+                    </FrameLayout>
+                </android.support.constraint.ConstraintLayout>
+            </FrameLayout>
+
+            <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+            <android.support.design.widget.NavigationView
+                android:id="@+id/nav_view"
+                app:headerLayout="@layout/header_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:itemTextColor="@color/applicatioTheme"
+                android:background="@android:color/white"
+                app:itemIconTint="@color/applicatioTheme"
+                app:menu="@menu/principal_menu" />
+
+
+        </android.support.v4.widget.DrawerLayout>
     </android.support.constraint.ConstraintLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_article"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/imageButton_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:src="@drawable/ic_home_icons_plan_icons_plan_icons_plan"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:src="@drawable/ic_annuaire_icons_plan_icons_plan"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageButton_home"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:src="@drawable/ic_formations_icons_plan_icons_plan"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="0dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:src="@drawable/ic_annuaire_icons_plan_icons_plan"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:src="@drawable/ic_home_icons_plan_icons_plan_icons_plan"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageButton3"
-            tools:ignore="MissingConstraints" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#86888787"
-        android:elevation="6dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintGuide_percent="0.40875912" />
-
-    <include
-        layout="@layout/menu_layout"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_content"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/frame_nav"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/constraint_layout_onglet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbarlayout">
-
-    </FrameLayout>
 </android.support.constraint.ConstraintLayout>
