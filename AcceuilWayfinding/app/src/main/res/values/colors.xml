@@ -7,4 +7,8 @@
     <color name="white">#FFFFFF</color>
     <color name="color">#312783</color>
     <color name="black">#666666</color>
+
+    <color name="white_black">#ACABAB</color>
+    <color name="appBack">#d9d9d9</color>
+
 </resources>

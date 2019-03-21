@@ -1,21 +1,20 @@
 package e.plass.acceuilwayfinding.model;
 
 import android.content.Context;
-import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import e.plass.acceuilwayfinding.R;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
+import java.util.Calendar;
+
+import e.plass.acceuilwayfinding.R;
 
 public class CustumAdapter extends RecyclerView.Adapter<CustumAdapter.ViewHolder> {
     private Context          context;
@@ -40,12 +39,18 @@ public class CustumAdapter extends RecyclerView.Adapter<CustumAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        try{
+            int id = context.getResources().getIdentifier(ecoles.get(i).getImage(),"drawable",context.getPackageName());
+            viewHolder.imageView.setImageResource(id);
+        }catch (Exception ex){
+            viewHolder.imageView.setImageResource(R.drawable.ic_do_not_disturb_black_24dp);
+        }
         viewHolder.name.setText(ecoles.get(i).getName());
         String description = ecoles.get(i).getDescrition();
         viewHolder.description.setText(description.substring(10)+"...");
-        viewHolder.dateNaiss.setText(""+ecoles.get(i).getCreationDate());
+        String theDate = ecoles.get(i).getCreationDate().get(Calendar.MONTH) + "/" + ecoles.get(i).getCreationDate().get(Calendar.DAY_OF_MONTH) + "/" + ecoles.get(i).getCreationDate().get(Calendar.YEAR);
+        viewHolder.dateNaiss.setText(""+theDate);
         viewHolder.note.setText(""+ ecoles.get(i).getNote());
-        Log.d("onBindViewHolder",""+ecoles.get(i).getNote());
     }
 
     @Override
@@ -55,16 +60,17 @@ public class CustumAdapter extends RecyclerView.Adapter<CustumAdapter.ViewHolder
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView imageView;
-        private TextView  name;
-        private TextView  dateNaiss;
-        private TextView  description;
-        private TextView  note;
-        private ConstraintLayout    parent;
+        private ImageView        imageView;
+        private TextView         name;
+        private TextView         dateNaiss;
+        private TextView         description;
+        private TextView         note;
+        private ConstraintLayout parent;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.circleImageView_list_item_formation);
             name = itemView.findViewById(R.id.textView_name);
             dateNaiss = itemView.findViewById(R.id.textView_date_creation);
             description = itemView.findViewById(R.id.textView_description);

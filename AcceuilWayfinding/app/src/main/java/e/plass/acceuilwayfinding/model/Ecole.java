@@ -1,16 +1,13 @@
 package e.plass.acceuilwayfinding.model;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-
-import java.util.*;
+import java.util.Calendar;
 
 public class Ecole {
     private int id;
     private float    note;
     private String name;
     private String image;
-    private Date   creationDate;
+    private Calendar   creationDate;
     private String ville;
     private String quartier;
     private String directeur;
@@ -21,7 +18,7 @@ public class Ecole {
     public Ecole() {
     }
 
-    public Ecole(int id, float note, String name, String image, Date creationDate, String ville, String quartier, String directeur, String descrition) {
+    public Ecole(int id, float note, String name, String image, Calendar creationDate, String ville, String quartier, String directeur, String descrition) {
         this.id = id;
         this.note = note;
         this.name = name;
@@ -72,11 +69,11 @@ public class Ecole {
         this.name = name;
     }
 
-    public Date getCreationDate() {
+    public Calendar getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(Calendar creationDate) {
         this.creationDate = creationDate;
     }
 
