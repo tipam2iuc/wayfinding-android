@@ -1,4 +1,5 @@
 package e.plass.acceuilwayfinding.model;
+
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -47,7 +49,7 @@ public class ParamAdapter extends RecyclerView.Adapter<ParamAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView        imageView;
         private TextView         name;
-        private ImageView         next;
+        private ImageView        next;
         private ConstraintLayout parent;
 
 
@@ -60,4 +62,3 @@ public class ParamAdapter extends RecyclerView.Adapter<ParamAdapter.ViewHolder> 
         }
     }
 }
-

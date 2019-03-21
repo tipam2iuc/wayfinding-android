@@ -17,20 +17,27 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppFullScreen">
+        <activity android:name=".DetailFormationActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppFullScreen"></activity>
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".Aceuil" />
+        <activity android:name=".Inscription" />
+        <activity android:name=".Connexion" />
+        <activity
+            android:name=".Profile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WelcomeActivity" />
-        <activity android:name=".Aceuil" />
-        <activity android:name=".Inscription" />
-        <activity android:name=".Connexion" />
         <activity android:name=".Profile" />
         <activity android:name=".TestActivity" />
         <meta-data android:name="com.google.android.geo.API_KEY"
                     android:value="AIzaSyASYRhE9O63rlLjXNZUiGbGNqmJtGWj-qk"/>
+        <activity android:name=".TestActivity" />
     </application>
 
 </manifest>

@@ -29,6 +29,29 @@
     <string name="menu_formation">formations</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="more">En savoir plus</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="text_sort">Trier par</string>
+    <string name="menu_annonce">Annonces</string>
+    <string name="top_school">Meilleurs écoles</string>
+    <string name="top_formation">Meuiileurs formation</string>
+    <string name="top_annonce">Annoces recentes</string>
+    <string name="more">Plus</string>
+    <string name="invitation"> ajouter des amis</string>
+    <string name="test_text"> Passer un test</string>
+    <string name="open">Open</string>
+    <string name="Close"> Close</string>
+
+    <string-array name="spiner_search">
+        <item>Formation</item>
+        <item>Ecole</item>
+        <item>Annonce</item>
+    </string-array>
+
+    <string-array name="spiner_formation">
+        <item>Nom : A-Z</item>
+        <item>Nom : Z-A</item>
+        <item>Note : du plus grand au plus petit</item>
+        <item>Note : du plus petit au plus grand</item>
+    </string-array>
 </resources>

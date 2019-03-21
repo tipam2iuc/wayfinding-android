@@ -4,17 +4,18 @@ package e.plass.acceuilwayfinding;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Toast;
 
 import e.plass.acceuilwayfinding.model.CustumAdapter;
 import e.plass.acceuilwayfinding.model.Ecole;
+import e.plass.acceuilwayfinding.model.Util;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,39 +50,21 @@ public class SchoolFragment extends android.support.v4.app.Fragment {
         view = inflater.inflate(R.layout.fragment_school, container, false);
         recyclerView = view.findViewById(R.id.recyclerView_school);
 
-        Ecole ecole = new Ecole(1,7.4f,"IUC","1",new Date(10,12,10),"Douala","Logbessou",
-                "Essono","At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga");
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-        ecoles.add(ecole);
-
+        Util u = new Util();
+        ecoles.addAll(Util.getEcoles());
         initRecycleView();
         return view;
     }
 
 
     public void initRecycleView(){
-        try{
-            CustumAdapter custumAdapter = new CustumAdapter(getContext(),ecoles);
-            recyclerView.setAdapter(custumAdapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        }catch (Exception ex){
-            Toast.makeText(getContext(),ex.getMessage(),Toast.LENGTH_LONG).show();
-        }
+        CustumAdapter             custumAdapter             = new CustumAdapter(getContext(),ecoles);
+        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(getContext(),R.anim.layout_anim_slide);
+        recyclerView.setAdapter(custumAdapter);
+        recyclerView.setLayoutAnimation(layoutAnimationController);
+        recyclerView.getAdapter().notifyDataSetChanged();
+        recyclerView.scheduleLayoutAnimation();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
 }

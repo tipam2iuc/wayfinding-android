@@ -1,13 +1,12 @@
 package e.plass.acceuilwayfinding.model;
 
 public class Paramatre {
-
     private int id;
-    private String title;
+    private int title;
     private int ico;
     private boolean isNext;
 
-    public Paramatre(int id, String title, int ico, boolean isNext) {
+    public Paramatre(int id, int title, int ico, boolean isNext) {
         this.id = id;
         this.title = title;
         this.ico = ico;
@@ -30,11 +29,11 @@ public class Paramatre {
         this.id = id;
     }
 
-    public String getTitle() {
+    public int getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(int title) {
         this.title = title;
     }
 

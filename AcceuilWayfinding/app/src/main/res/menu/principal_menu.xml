@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/prin_profilr"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profil"
+
+        />
+    <item
+        android:id="@+id/prin_preference"
+        android:icon="@drawable/ic_preference_icons_plan_icons_plan"
+        android:title="@string/preference"
+
+        />
+    <item
+        android:id="@+id/prin_paramater"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/seting"
+
+        />
+    <item
+        android:id="@+id/prin_invitation"
+        android:icon="@drawable/ic_shared_icons"
+        android:title="@string/invitation"
+
+        />
+    <item
+        android:id="@+id/prin_about"
+        android:icon="@drawable/ic_about_icons_plan_icons_plan"
+        android:title="@string/about"
+
+        />
+    <item
+        android:id="@+id/prin_test_text"
+        android:icon="@drawable/ic_about_icons_plan_icons_plan"
+        android:title="@string/test_text"
+
+        />
+    <item
+        android:id="@+id/prin_discon"
+        android:icon="@drawable/ic_power_settings_new_black_24dp"
+        android:title="@string/diconnect"
+
+        />
+</menu>
