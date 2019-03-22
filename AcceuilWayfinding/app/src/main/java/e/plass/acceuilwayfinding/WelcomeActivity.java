@@ -131,7 +131,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
     private void startMainActivity(){
         setFirstTimeStartStatus(false);
-        startActivity(new Intent(WelcomeActivity.this, Aceuil.class));
+        startActivity(new Intent(WelcomeActivity.this, MapActivity.class));
         finish();
     }
     private void setStatusBarTransparent(){

@@ -14,6 +14,14 @@
         android:src="@drawable/giflogo"
         android:layout_centerInParent="true"
         android:scaleType="fitXY"/>
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_below="@id/imagesplash"
+        android:id="@+id/imageloading"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/loader"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"/>
 
     
 
