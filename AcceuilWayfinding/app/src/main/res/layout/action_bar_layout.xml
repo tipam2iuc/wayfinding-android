@@ -4,16 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:background="@color/applicatioTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:titleTextColor="@android:color/white"
-        android:layout_height="40dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:collapseIcon="@drawable/ic_logo"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/AppTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/applicatioTheme"
+            android:theme="@style/AppTheme"
+            app:collapseIcon="@drawable/ic_circlelogo_icon_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@android:color/white" />
+    </android.support.design.widget.AppBarLayout>
 </android.support.constraint.ConstraintLayout>

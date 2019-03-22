@@ -29,7 +29,8 @@
             <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
             <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/white">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -54,9 +55,8 @@
                             android:id="@+id/bottomNavigationView_menu"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@color/white"
-                            app:itemIconTint="@color/nav_item_color"
-                            app:itemTextColor="@color/nav_item_color"
+                            app:itemIconTint="@color/applicatioTheme"
+                            app:itemTextColor="@color/applicatioTheme"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

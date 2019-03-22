@@ -19,6 +19,8 @@ android {
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -45,8 +47,8 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
     implementation 'com.github.florent37:awesomebar:1.0.3'
-}
+
+    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'}
 
 apply plugin: 'com.google.gms.google-services'

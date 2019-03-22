@@ -17,6 +17,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:text="@string/text_sort"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/spinner_sort_school"
             app:layout_constraintStart_toEndOf="@+id/spinner_sort_school"
             app:layout_constraintTop_toTopOf="@+id/spinner_sort_school" />
@@ -26,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:outlineSpotShadowColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

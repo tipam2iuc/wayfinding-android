@@ -1,6 +1,7 @@
 package e.plass.acceuilwayfinding;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -46,6 +48,7 @@ public class SearchFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Util u = new Util();
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         recyclerView = view.findViewById(R.id.recyclerview_search_item);
         searchview = view.findViewById(R.id.searchView_search);
@@ -54,28 +57,28 @@ public class SearchFragment extends android.support.v4.app.Fragment {
         searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                searchAdapter.getFilter().filter(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
+
                 return false;
             }
         });
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),R.array.spiner_search,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        initRecycleView();
+        initRecycleView(searchAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
                     searchAdapter = new SearchAdapter(getContext(),Util.getFormations(),Util.getEcoles(),false);
-                    initRecycleView();
+                    initRecycleView(searchAdapter);
                 }else  if(position == 1){
                     searchAdapter = new SearchAdapter(getContext(),Util.getFormations(),Util.getEcoles(),true);
-                    initRecycleView();
+                    initRecycleView(searchAdapter);
                 }
             }
 
@@ -89,7 +92,7 @@ public class SearchFragment extends android.support.v4.app.Fragment {
     }
 
 
-    public void initRecycleView(){
+    public void initRecycleView(SearchAdapter searchAdapter){
         LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(getContext(),R.anim.layout_fall_down);
         recyclerView.setAdapter(searchAdapter);
         recyclerView.setLayoutAnimation(layoutAnimationController);
@@ -98,7 +101,36 @@ public class SearchFragment extends android.support.v4.app.Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
-    public void searchToRecyclerFormation(String newText){
 
+    public void search(String query, SearchAdapter searchAdapter){
+        if(searchAdapter.isChool()){
+            if(query.isEmpty() || query.length()==0){
+                searchAdapter = new SearchAdapter(getContext(),Util.getFormations(),Util.getEcoles(),true);
+                initRecycleView(searchAdapter);
+            }else{
+                schools.clear();
+                for (Ecole e:searchAdapter.getEcoles()){
+                    if(e.getName().toLowerCase().trim().contains(query.toLowerCase().trim())){
+                        schools.add(e);
+                    }
+                }
+                searchAdapter = new SearchAdapter(getContext(),Util.getFormations(),schools,true);
+                initRecycleView(searchAdapter);
+            }
+
+        }else{
+            if(query.isEmpty() || query.length()==0){
+                searchAdapter = new SearchAdapter(getContext(),Util.getFormations(),Util.getEcoles(),false);
+            }else {
+                formations.clear();
+                for (Formation e : searchAdapter.getFormations()) {
+                    if (e.getName().toLowerCase().trim().contains(query.toLowerCase().trim())) {
+                        formations.add(e);
+                    }
+                }
+                searchAdapter = new SearchAdapter(getContext(), formations, Util.getEcoles(), false);
+                initRecycleView(searchAdapter);
+            }
+        }
     }
 }

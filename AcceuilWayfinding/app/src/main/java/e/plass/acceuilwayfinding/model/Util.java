@@ -20,7 +20,7 @@ public class Util {
         ecoles.clear();
         Calendar c = Calendar.getInstance();
         c.set(2010,01,01);
-        ecoles.add(new Ecole(1,12f,"Catholic University of Cameroon","ucc", c,"Bamenda","",""
+        ecoles.add(new Ecole(1,12f,"Catholic University of Cameroon","ucc.png", c,"Bamenda","",""
         ,"Créée en 2010, l’Université catholique du Cameroun est un établissement d’enseignement supérieur privé sans but lucratif situé dans le milieu urbain de la ville moyenne de Bamenda (population de 500 000 à 1 000 000 habitants), région du Nord-Ouest. Officiellement accréditée et / ou reconnue par le Ministère de l’Enseignement Supérieur du Cameroun, l’Université Catholique du Cameroun (CATUC) est une institution d’enseignement supérieur mixte formellement affiliée à la religion chrétienne-catholique. L’Université catholique du Cameroun (CATUC) propose des cours et des programmes menant à des diplômes d’enseignement supérieur officiellement reconnus dans plusieurs domaines d’études."));
 
         c.set(1971,06,04);

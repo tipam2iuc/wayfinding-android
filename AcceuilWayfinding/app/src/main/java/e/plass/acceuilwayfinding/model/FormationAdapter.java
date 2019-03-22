@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -77,6 +78,8 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
         private TextView         note;
         private ConstraintLayout content;
         private CardView         cardview;
+        private ConstraintLayout contentDesc;
+        private Button button;
 
         public FormationViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -86,17 +89,22 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
             note = itemView.findViewById(R.id.textView_recyclerview_formation_note);
             content = itemView.findViewById(R.id.recyclerview_formation);
             cardview = itemView.findViewById(R.id.cardView_formation);
+            contentDesc = itemView.findViewById(R.id.constraintLayout_formation_desc);
+            button = itemView.findViewById(R.id.button_formation_more);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            itemView.setOnClickListener(v-> {
                     int position = getAdapterPosition();
                     if(listener != null && position != RecyclerView.NO_POSITION)
                     {
                         listener.onItemClick(formations.get(position));
                     }
                 }
-            });
+            );
+            button.setOnClickListener(v-> {
+                description.setText(formations.get(getAdapterPosition()).getDescripetion());
+                contentDesc.setMinHeight(cardview.getHeight());
+                }
+            );
         }
     }
 }

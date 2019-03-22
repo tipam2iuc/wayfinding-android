@@ -20,8 +20,22 @@ import e.plass.acceuilwayfinding.R;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHoder> implements Filterable {
     private Context context;
     private ArrayList<Formation> formations = new ArrayList<>();
+    private ArrayList<Formation> sortFormations = new ArrayList<>();
     private ArrayList<Ecole> ecoles = new ArrayList<>();
+    private ArrayList<Ecole> sortEcoles = new ArrayList<>();
     private boolean isChool;
+
+    public boolean isChool() {
+        return isChool;
+    }
+
+    public ArrayList<Formation> getFormations() {
+        return formations;
+    }
+
+    public ArrayList<Ecole> getEcoles() {
+        return ecoles;
+    }
 
     public void setChool(boolean chool) {
         isChool = chool;

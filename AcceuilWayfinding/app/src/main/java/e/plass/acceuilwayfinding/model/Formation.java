@@ -3,7 +3,7 @@ package e.plass.acceuilwayfinding.model;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Formation {
+public class Formation implements Comparable< Formation >{
     private int id;
     private String    name;
     private ArrayList<String> debouches;
@@ -80,11 +80,16 @@ public class Formation {
                 ", debouches=" + debouches +
                 '}';
     }
-    public static Comparator<Formation> comparableByName = new Comparator<Formation>() {
+
+    @Override
+    public int compareTo(Formation o) {
+        return this.getName().toLowerCase().trim().compareToIgnoreCase(o.getName().trim());
+    }
+    /*public static Comparator<Formation> comparableByName = new Comparator<Formation>() {
         @Override
         public int compare(Formation o1, Formation o2) {
 
-            return o1.name.trim().compareTo(o2.name.trim());
+            return o1.name.trim().toLowerCase().compareTo(o2.name.trim());
         }
     };
     public static Comparator<Formation> comparableByNote = new Comparator<Formation>() {
@@ -93,5 +98,5 @@ public class Formation {
 
             return (int) (o1.notes - o2.notes);
         }
-    };
+    };*/
 }

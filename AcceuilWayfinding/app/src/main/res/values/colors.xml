@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0444D4</color>
+    <color name="colorPrimary">#312783</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="applicatioTheme">#312783</color>
+    <color name="applicatioThemeDark">#18124B</color>
     <color name="white">#FFFFFF</color>
-    <color name="color">#312783</color>
-    <color name="black">#666666</color>
+    <color name="color">#312783</color>/
+    <color name="black">#363636</color>
 
     <color name="white_black">#ACABAB</color>
     <color name="appBack">#d9d9d9</color>

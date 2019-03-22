@@ -9,8 +9,9 @@
     <ImageView
         android:id="@+id/imageview_header_grande"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="200dp"
         android:src="@drawable/busi"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

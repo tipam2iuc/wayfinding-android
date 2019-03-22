@@ -19,7 +19,9 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
+import e.plass.acceuilwayfinding.model.CustumAdapter;
 import e.plass.acceuilwayfinding.model.Formation;
 import e.plass.acceuilwayfinding.model.FormationAdapter;
 import e.plass.acceuilwayfinding.model.Util;
@@ -36,7 +38,7 @@ public class FormationFragment extends android.support.v4.app.Fragment {
     private Context              context;
     private Spinner              spinner;
 
-    private FormationAdapter      custumAdapter             = new FormationAdapter(getContext(), Util.getFormations());
+    private FormationAdapter custumAdapter;
 
 
     public FormationFragment() {
@@ -53,24 +55,26 @@ public class FormationFragment extends android.support.v4.app.Fragment {
         spinner = v.findViewById(R.id.spinner_sort_formation);
         formations.clear();
 
+        Util u = new Util();
+
+        formations = Util.getFormations();
+        custumAdapter = new FormationAdapter(getContext(), formations);
         initRecycleView();
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),R.array.spiner_formation,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.spiner_formation, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 0){
-                    sortRecycleByName();
-                    initRecycleView();
-                }else if(position == 1){
-                    sortRecycleByName();
+                if (position == 0) {
+                    sortFormations();
+                } else if (position == 1) {
+                    sortFormations();
                     Collections.reverse(formations);
                     initRecycleView();
-                }else{
-                    sortRecycleByNote();
+                } else {
                     initRecycleView();
                 }
             }
@@ -83,8 +87,9 @@ public class FormationFragment extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
         return v;
     }
-    public void initRecycleView(){
-        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(getContext(),R.anim.layout_anim_slide);
+
+    public void initRecycleView() {
+        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(getContext(), R.anim.layout_anim_slide);
         recyclerView.setAdapter(custumAdapter);
 
         recyclerView.setLayoutAnimation(layoutAnimationController);
@@ -95,19 +100,19 @@ public class FormationFragment extends android.support.v4.app.Fragment {
             @Override
             public void onItemClick(Formation formation) {
                 Util.setCurrentFormation(formation);
-                Intent intent = new Intent(getContext(),DetailFormationActivity.class);
+                Intent intent = new Intent(getContext(), DetailFormationActivity.class);
                 startActivity(intent);
             }
         });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
+    public void sortFormations(){
+        Collections.sort(formations, (Formation o1, Formation o2) ->
+                 o1.getName().compareToIgnoreCase(o2.getName())
+        );
+        custumAdapter.notifyDataSetChanged();
+    }
 
-    public void sortRecycleByName(){
-        Collections.sort(formations,Formation.comparableByName);
-    }
-    public void sortRecycleByNote(){
-        Collections.sort(formations,Formation.comparableByNote);
-    }
 
 }

@@ -48,11 +48,11 @@
                     app:layout_constraintGuide_percent="0.6594982" />
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/constraintLayout4"
+                    android:id="@+id/constraintLayout_formation_desc"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginTop="8dp"
-                    android:background="#C8FFFFFF"
+                    android:background="@drawable/custum_background_formation_desc"
                     android:elevation="50dp"
                     android:padding="7dp"
                     app:layout_constraintBottom_toBottomOf="@id/imageview_recycler_item_formation1"
@@ -60,14 +60,32 @@
                     app:layout_constraintStart_toStartOf="@+id/textView_recyclerview_formation"
                     app:layout_constraintTop_toTopOf="@+id/guideline">
 
+                    <Button
+                        android:id="@+id/button_formation_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@android:color/transparent"
+                        android:text="@string/more"
+                        android:textAllCaps="false"
+                        android:textColor="@color/applicatioTheme"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView_recyclerview_formation_note" />
+
                     <ImageView
                         android:id="@+id/imageView_start_formation"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="@id/textView_recyclerview_formation_note"
-                        app:layout_constraintEnd_toStartOf="@id/textView_recyclerview_formation_note"
-                        app:layout_constraintTop_toTopOf="@id/textView_recyclerview_formation_note"
-                        android:src="@drawable/ic_star_black_24dp" />
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_star_black_24dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView_recyclerview_formation_description"
+                        app:layout_constraintStart_toEndOf="@+id/textView_recyclerview_formation_name"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/textView_recyclerview_formation_name"
@@ -87,38 +105,37 @@
                         android:id="@+id/textView_recyclerview_formation_note"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp"
                         android:text="TextView"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/textView_recyclerview_formation_name" />
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView_start_formation"
+                        app:layout_constraintStart_toEndOf="@+id/imageView_start_formation"
+                        app:layout_constraintTop_toTopOf="@+id/imageView_start_formation" />
 
                     <TextView
                         android:id="@+id/textView_recyclerview_formation_description"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
                         android:text="TextView"
-                        android:textColor="@color/white_black"
+                        android:textColor="@color/common_google_signin_btn_text_light_pressed"
                         android:textSize="12sp"
                         android:visibility="visible"
-                        app:layout_constraintEnd_toStartOf="@id/imageView_start_formation"
+                        app:layout_constraintEnd_toStartOf="@+id/button_formation_more"
                         app:layout_constraintStart_toStartOf="@id/textView_recyclerview_formation_name"
                         app:layout_constraintTop_toBottomOf="@id/textView_recyclerview_formation_name" />
                 </android.support.constraint.ConstraintLayout>
 
                 <ImageView
                     android:id="@+id/imageview_recycler_item_formation1"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="274dp"
                     android:src="@drawable/business"
                     app:layout_constraintDimensionRatio="w,3:2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-
+                    android:scaleType="centerCrop"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>

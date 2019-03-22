@@ -46,8 +46,13 @@ public class CustumAdapter extends RecyclerView.Adapter<CustumAdapter.ViewHolder
             viewHolder.imageView.setImageResource(R.drawable.ic_do_not_disturb_black_24dp);
         }
         viewHolder.name.setText(ecoles.get(i).getName());
-        String description = ecoles.get(i).getDescrition();
-        viewHolder.description.setText(description.substring(10)+"...");
+        String description = ecoles.get(i).getDescrition().trim();
+        try{
+            description = description.substring(0,130)+"...";
+            viewHolder.description.setText(description);
+        }catch (Exception ex){
+            viewHolder.description.setText(ecoles.get(i).getDescrition().trim()+"...");
+        }
         String theDate = ecoles.get(i).getCreationDate().get(Calendar.MONTH) + "/" + ecoles.get(i).getCreationDate().get(Calendar.DAY_OF_MONTH) + "/" + ecoles.get(i).getCreationDate().get(Calendar.YEAR);
         viewHolder.dateNaiss.setText(""+theDate);
         viewHolder.note.setText(""+ ecoles.get(i).getNote());

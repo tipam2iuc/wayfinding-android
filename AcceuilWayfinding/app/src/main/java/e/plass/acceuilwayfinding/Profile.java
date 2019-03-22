@@ -26,6 +26,7 @@ import android.widget.Toolbar;
 
 import e.plass.acceuilwayfinding.model.ParamAdapter;
 import e.plass.acceuilwayfinding.model.Paramatre;
+import e.plass.acceuilwayfinding.model.SearchAdapter;
 
 import java.util.ArrayList;
 
@@ -61,6 +62,7 @@ public class Profile extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
 
 
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
         getSupportActionBar().setIcon(R.drawable.ic_logo);
@@ -69,7 +71,7 @@ public class Profile extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
-        actionbar.setHomeAsUpIndicator(R.drawable.ic_hamburger_icons_plan_icons_plan);
+        actionbar.setHomeAsUpIndicator(R.drawable.ic_format);
         drawerLayout.addDrawerListener(
                 new DrawerLayout.DrawerListener() {
                     @Override
