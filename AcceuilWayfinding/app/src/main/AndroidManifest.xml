@@ -13,15 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".MapActivity">
+        </activity>
         <activity
             android:name=".MainActivity">
+
+        </activity>
         <activity android:name=".DetailFormationActivity"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppFullScreen"></activity>
         <activity android:name=".WelcomeActivity" />
-        <activity android:name=".Aceuil" />
+        <activity android:name=".Aceuil"
+            android:theme="@style/AppTheme2">
+        </activity>
         <activity android:name=".Inscription" />
         <activity android:name=".Connexion" />
         <activity
@@ -32,11 +34,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Profile" />
         <activity android:name=".TestActivity" />
         <meta-data android:name="com.google.android.geo.API_KEY"
                     android:value="AIzaSyASYRhE9O63rlLjXNZUiGbGNqmJtGWj-qk"/>
-        <activity android:name=".TestActivity" />
     </application>
 
 </manifest>

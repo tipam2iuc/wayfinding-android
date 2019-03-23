@@ -1,11 +1,14 @@
 package e.plass.acceuilwayfinding;
 
 import android.annotation.SuppressLint;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -13,14 +16,19 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.PointerIcon;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
+import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -32,7 +40,7 @@ import java.util.ArrayList;
 
 import static e.plass.acceuilwayfinding.R.string.Close;
 
-public class Profile extends AppCompatActivity {
+public class Profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private BottomNavigationView mMainNav;
 
@@ -41,6 +49,7 @@ public class Profile extends AppCompatActivity {
     private AccountFragment accountFragment;
     private FormationFragment formationFragment;
     private SearchFragment searchFragment;
+    private NavigationView navigationView;
 
     private android.support.v7.widget.Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -60,7 +69,9 @@ public class Profile extends AppCompatActivity {
         //intitialisation
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
 
+        navigationView.setNavigationItemSelectedListener(this);
 
 
         setSupportActionBar(toolbar);
@@ -115,28 +126,27 @@ public class Profile extends AppCompatActivity {
 
 
             //Navigation
-            mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    switch (menuItem.getItemId()){
-                        case R.id.menu_item_home:
-                            setFragment(homeFragment);
-                            return true;
-                        case R.id.menu_item_school:
-                            setFragment(schoolFragment);
-                            return true;
-                        case R.id.menu_item_formation:
-                            setFragment(formationFragment);
-                            return true;
-                        case R.id.menu_item_account:
-                            setFragment(accountFragment);
-                            return true;
-                        case R.id.menu_item_search:
-                            setFragment(searchFragment);
-                            return true;
-                        default:
-                            return false;
+            mMainNav.setOnNavigationItemSelectedListener(menuItem -> {
+                switch (menuItem.getItemId()){
+                    case R.id.menu_item_home:{
+                        setFragment(homeFragment);
                     }
+                        return true;
+                    case R.id.menu_item_school:{
+                        setFragment(schoolFragment);
+                    }
+                        return true;
+                    case R.id.menu_item_formation:
+                        setFragment(formationFragment);
+                        return true;
+                    case R.id.menu_item_account:
+                        setFragment(accountFragment);
+                        return true;
+                    case R.id.menu_item_search:
+                        setFragment(searchFragment);
+                        return true;
+                    default:
+                        return false;
                 }
             });
 
@@ -153,6 +163,7 @@ public class Profile extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -168,5 +179,23 @@ public class Profile extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_nav,fragment);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        if(menuItem.getItemId() == R.id.prin_discon){
+            Intent i = new Intent(Profile.this,Aceuil.class);
+            startActivity(i);
+            this.finish();
+        }
+        return true;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+    public void to(String text){
+        Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
     }
 }

@@ -11,6 +11,7 @@
         android:id="@+id/prin_preference"
         android:icon="@drawable/ic_preference_icons_plan_icons_plan"
         android:title="@string/preference"
+        app:showAsAction=""
 
         />
     <item

@@ -23,6 +23,7 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
     private Context context;
     ArrayList<Formation> formations;
     ArrayList<Formation> formationsSearch;
+    final int DESC = 100;
 
     public FormationAdapter(Context context, ArrayList<Formation> formations) {
         this.context = context;
@@ -50,7 +51,7 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
     @Override
     public void onBindViewHolder(@NonNull FormationViewHolder formationAdapter, int i) {
         Formation curren = formations.get(i);
-        String description = curren.getDescripetion().substring(0,100)+"...";
+        String description = curren.getDescripetion().substring(0,DESC)+"...";
         try {
             int id = context.getResources().getIdentifier(curren.getImage(),"drawable",context.getPackageName());
             Glide.with(context)
@@ -80,6 +81,7 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
         private CardView         cardview;
         private ConstraintLayout contentDesc;
         private Button button;
+        private boolean isMore = false;
 
         public FormationViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -101,8 +103,18 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
                 }
             );
             button.setOnClickListener(v-> {
-                description.setText(formations.get(getAdapterPosition()).getDescripetion());
-                contentDesc.setMinHeight(cardview.getHeight());
+                if(!isMore){
+                    description.setText(formations.get(getAdapterPosition()).getDescripetion());
+                    isMore = true;
+                    button.setText(R.string.moin);
+                }else{
+                    description.setText(formations
+                            .get(getAdapterPosition())
+                            .getDescripetion()
+                            .trim().substring(0,DESC)+"...");
+                    button.setText(R.string.more);
+                    isMore = false;
+                }
                 }
             );
         }

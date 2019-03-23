@@ -7,6 +7,12 @@
         <item name="colorPrimaryDark">@color/applicatioTheme</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#8B8A8A</item>
+        <item name="colorPrimaryDark">#8B8A8A</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
     <style name="AppFullScreen" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

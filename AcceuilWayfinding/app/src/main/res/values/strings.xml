@@ -41,6 +41,7 @@
     <string name="test_text"> Passer un test</string>
     <string name="open">Open</string>
     <string name="Close"> Close</string>
+    <string name="moin">Moin</string>
 
     <string-array name="spiner_search">
         <item>Formation</item>

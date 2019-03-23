@@ -40,25 +40,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <android.support.constraint.Guideline
-                    android:id="@+id/guideline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.6594982" />
-
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/constraintLayout_formation_desc"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/custum_background_formation_desc"
                     android:elevation="50dp"
                     android:padding="7dp"
                     app:layout_constraintBottom_toBottomOf="@id/imageview_recycler_item_formation1"
                     app:layout_constraintEnd_toEndOf="@+id/textView_recyclerview_formation"
-                    app:layout_constraintStart_toStartOf="@+id/textView_recyclerview_formation"
-                    app:layout_constraintTop_toTopOf="@+id/guideline">
+                    app:layout_constraintStart_toStartOf="@+id/textView_recyclerview_formation">
 
                     <Button
                         android:id="@+id/button_formation_more"
