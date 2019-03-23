@@ -1,8 +1,11 @@
 package e.plass.acceuilwayfinding;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -85,13 +88,12 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
 
 
 
-        mFirebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+        mFirebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, (@NonNull Task<AuthResult> task) ->{
                 if(task.isSuccessful()){
 
+                    Intent i = new Intent(this,Profile.class);
+                    startActivity(i);
                     finish();
-
                     Toast.makeText(Inscription.this,"Inscription Reussie", Toast.LENGTH_SHORT).show();
 
 
@@ -101,7 +103,7 @@ public class Inscription extends AppCompatActivity implements View.OnClickListen
                 }
                 mProgressDialog.dismiss();
             }
-        });
+        );
 
     }
 

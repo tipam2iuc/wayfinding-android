@@ -41,6 +41,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView_application_name"
             app:srcCompat="@drawable/ic_logo"
+            android:transitionName="trans1"
             tools:ignore="VectorDrawableCompat" />
 
     </android.support.constraint.ConstraintLayout>

@@ -19,7 +19,8 @@
             android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".DetailFormationActivity"></activity>
+        <activity android:name=".DetailFormationActivity"
+            android:launchMode="singleTop"></activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".Aceuil"
             android:theme="@style/AppTheme2">

@@ -1,8 +1,12 @@
 package e.plass.acceuilwayfinding.model;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,6 +21,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import e.plass.acceuilwayfinding.DetailFormationActivity;
 import e.plass.acceuilwayfinding.R;
 
 public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.FormationViewHolder> {
@@ -117,6 +122,17 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
                 }
                 }
             );
+            imageView.setOnClickListener((View v)->{
+                Intent i = new Intent(context, DetailFormationActivity.class);
+                Util.setCurrentFormation(formations.get(getAdapterPosition()));
+                ActivityOptionsCompat option = ActivityOptionsCompat
+                        .makeSceneTransitionAnimation((Activity) context,imageView,"trans1");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    context.startActivity(i,option.toBundle());
+                }else{
+                    context.startActivity(i);
+                }
+            });
         }
     }
 }
