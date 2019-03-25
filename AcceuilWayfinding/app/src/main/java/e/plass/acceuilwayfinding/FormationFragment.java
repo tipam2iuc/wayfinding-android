@@ -31,88 +31,88 @@ import e.plass.acceuilwayfinding.model.Util;
  * A simple {@link android.support.v4.app.Fragment} subclass.
  */
 public class FormationFragment extends android.support.v4.app.Fragment {
-    private ArrayList<Formation> formations        = new ArrayList<>();
-    private ArrayList<Formation> sortFormations    = new ArrayList<>();
-    private ArrayList<Formation> contentFormations = new ArrayList<>();
-    private RecyclerView         recyclerView;
-    private Context              context;
-    private Spinner              spinner;
+  private ArrayList<Formation> formations        = new ArrayList<>();
+  private ArrayList<Formation> sortFormations    = new ArrayList<>();
+  private ArrayList<Formation> contentFormations = new ArrayList<>();
+  private RecyclerView         recyclerView;
+  private Context              context;
+  private Spinner              spinner;
 
-    private FormationAdapter custumAdapter;
-
-
-    public FormationFragment() {
-        // Required empty public constructor
-    }
+  private FormationAdapter custumAdapter;
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_formation, container, false);
-        recyclerView = v.findViewById(R.id.recyclerview_formation);
-        spinner = v.findViewById(R.id.spinner_sort_formation);
-        formations.clear();
+  public FormationFragment() {
+    // Required empty public constructor
+  }
 
-        Util u = new Util();
 
-        formations = Util.getFormations();
-        custumAdapter = new FormationAdapter(getContext(), formations);
-        initRecycleView();
+  @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                           Bundle savedInstanceState) {
+    // Inflate the layout for this fragment
+    View v = inflater.inflate(R.layout.fragment_formation, container, false);
+    recyclerView = v.findViewById(R.id.recyclerview_formation);
+    spinner = v.findViewById(R.id.spinner_sort_formation);
+    formations.clear();
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.spiner_formation, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+    Util u = new Util();
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    sortFormations();
-                } else if (position == 1) {
-                    sortFormations();
-                    Collections.reverse(formations);
-                    initRecycleView();
-                } else {
-                    initRecycleView();
-                }
-            }
+    formations = Util.getFormations();
+    custumAdapter = new FormationAdapter(getContext(), formations);
+    initRecycleView();
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.spiner_formation, android.R.layout.simple_spinner_item);
+    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    spinner.setAdapter(adapter);
 
-            }
-        });
-        // Inflate the layout for this fragment
-        return v;
-    }
+    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+      @Override
+      public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (position == 0) {
+          sortFormations();
+        } else if (position == 1) {
+          sortFormations();
+          Collections.reverse(formations);
+          initRecycleView();
+        } else {
+          initRecycleView();
+        }
+      }
 
-    public void initRecycleView() {
-        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(getContext(), R.anim.layout_anim_slide);
-        recyclerView.setAdapter(custumAdapter);
+      @Override
+      public void onNothingSelected(AdapterView<?> parent) {
 
-        recyclerView.setLayoutAnimation(layoutAnimationController);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
+      }
+    });
+    // Inflate the layout for this fragment
+    return v;
+  }
 
-        custumAdapter.setOnItemClickListener(new FormationAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Formation formation) {
-                Util.setCurrentFormation(formation);
-                Intent intent = new Intent(getContext(), DetailFormationActivity.class);
-                startActivity(intent);
-            }
-        });
+  public void initRecycleView() {
+    LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(getContext(), R.anim.layout_anim_slide);
+    recyclerView.setAdapter(custumAdapter);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-    }
-    public void sortFormations(){
-        Collections.sort(formations, (Formation o1, Formation o2) ->
-                 o1.getName().compareToIgnoreCase(o2.getName())
-        );
-        custumAdapter.notifyDataSetChanged();
-    }
+    recyclerView.setLayoutAnimation(layoutAnimationController);
+    recyclerView.getAdapter().notifyDataSetChanged();
+    recyclerView.scheduleLayoutAnimation();
+
+    custumAdapter.setOnItemClickListener(new FormationAdapter.OnItemClickListener() {
+      @Override
+      public void onItemClick(Formation formation) {
+        Util.setCurrentFormation(formation);
+        Intent intent = new Intent(getContext(), DetailFormationActivity.class);
+        startActivity(intent);
+      }
+    });
+
+    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+  }
+  public void sortFormations(){
+    Collections.sort(formations, (Formation o1, Formation o2) ->
+            o1.getName().compareToIgnoreCase(o2.getName())
+    );
+    custumAdapter.notifyDataSetChanged();
+  }
 
 
 }

@@ -121,6 +121,8 @@
                             android:layout_marginEnd="8dp"
                             android:layout_marginRight="8dp"
                             android:text="TextView"
+
+                            android:transitionName="trans_text_decr"
                             android:textColor="@color/common_google_signin_btn_text_light_pressed"
                             android:textSize="12sp"
                             android:visibility="visible"

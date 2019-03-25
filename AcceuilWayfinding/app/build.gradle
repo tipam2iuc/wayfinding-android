@@ -50,6 +50,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'com.github.florent37:awesomebar:1.0.3'
 
-    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'}
+    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+}
 
 apply plugin: 'com.google.gms.google-services'

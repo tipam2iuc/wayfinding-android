@@ -195,6 +195,7 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+    
     public void to(String text){
         Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
     }
