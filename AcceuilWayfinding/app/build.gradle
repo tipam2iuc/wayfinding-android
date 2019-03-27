@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.github.florent37:awesomebar:1.0.3'
 
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

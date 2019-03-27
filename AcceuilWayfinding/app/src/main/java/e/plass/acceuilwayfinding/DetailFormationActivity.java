@@ -1,6 +1,8 @@
 package e.plass.acceuilwayfinding;
 
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewParentCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,14 +31,19 @@ import e.plass.acceuilwayfinding.model.Formation;
 import e.plass.acceuilwayfinding.model.Util;
 import e.plass.acceuilwayfinding.model.ViewPageAdapter;
 
+import static e.plass.acceuilwayfinding.R.drawable.bc_vert_add;
+
 public class DetailFormationActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPageAdapter viewPageAdapter;
+    private Button addBtn;
 
     private CircleImageView imageView;
-    private TextView        textNameFormation;
     private Toolbar toolbar;
+
+    private final int sdk = android.os.Build.VERSION.SDK_INT;
+    private boolean isAdd;
 
 
     @Override
@@ -44,9 +52,9 @@ public class DetailFormationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_formation);
         toolbar = findViewById(R.id.Toolbar_detail_formation);
         imageView = findViewById(R.id.imageView_detail_formation);
-        textNameFormation = findViewById(R.id.textView_title_formation_detail);
         tabLayout = findViewById(R.id.tabLayout_formation_detail);
         viewPager = findViewById(R.id.viewpager_formation_detail);
+        addBtn = findViewById(R.id.button_add);
 
         viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
 
@@ -71,15 +79,39 @@ public class DetailFormationActivity extends AppCompatActivity {
         }catch (Exception ex){
             Log.d("imgFound", ex.getMessage());
         }
-        textNameFormation.setText(currenF.getName());
 
 
 
         setSupportActionBar(toolbar);
-        toolbar.setTitle(currenF.getName());
+
+        getSupportActionBar().setTitle(currenF.getName());
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        addBtn.setOnClickListener(v -> {
+            if(isAdd){
+                Drawable img = this.getResources().getDrawable( R.drawable.ic_add_circle );
+                addBtn.setText(R.string.add);
+                addBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_add_circle,0,0,0);
+                if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                    addBtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.custum_backgroung_btn_add_formation) );
+                } else {
+                    addBtn.setBackground(ContextCompat.getDrawable(this, R.drawable.custum_backgroung_btn_add_formation));
+                }
+                isAdd = false;
+            }else {
+                Drawable img = this.getResources().getDrawable( R.drawable.ic_check_circle );
+                addBtn.setText(R.string.added);
+                addBtn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check_circle,0,0,0);
+                if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                    addBtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.bc_vert_add) );
+                } else {
+                    addBtn.setBackground(ContextCompat.getDrawable(this, R.drawable.bc_vert_add));
+                }
+                isAdd = true;
+            }
+        });
     }
 
     @Override

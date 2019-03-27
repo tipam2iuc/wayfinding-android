@@ -8,21 +8,20 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/Toolbar_detail_formation"
-        app:titleTextColor="@color/white"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/header_formation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +33,6 @@
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:src="@drawable/busi"
             app:civ_border_color="#bfbfbf"
@@ -50,7 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
             android:text="Ecoles"
             android:textColor="@color/ecole_formation"
             android:textSize="18sp"
@@ -58,7 +55,8 @@
             app:layout_constraintEnd_toStartOf="@+id/textView5"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageView_detail_formation"
-            app:layout_constraintTop_toBottomOf="@+id/textView_title_formation_detail" />
+            app:layout_constraintTop_toTopOf="@+id/imageView_detail_formation"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textView_nbre_ecole_formation_detail"
@@ -100,35 +98,43 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="0dp"
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:background="@drawable/custum_backgroung_btn_add_formation"
+            android:drawableStart="@drawable/ic_add_circle"
+            android:drawableLeft="@drawable/ic_add_circle"
+            android:drawablePadding="3dp"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
             android:text="@string/add"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView_nombre_formation_formation_detail"
-            app:layout_constraintStart_toStartOf="@+id/textView_nbre_ecole_formation_detail"
+            android:textColor="#fff"
+            app:layout_constraintEnd_toStartOf="@+id/textView_nombre_formation_formation_detail"
+            app:layout_constraintStart_toEndOf="@+id/textView_nbre_ecole_formation_detail"
             app:layout_constraintTop_toBottomOf="@+id/textView_nbre_ecole_formation_detail" />
 
-        <TextView
-            android:id="@+id/textView_title_formation_detail"
+        <RatingBar
+            android:id="@+id/ratingBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="TextView"
-            android:textColor="@color/applicatioTheme"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView_detail_formation"
-            app:layout_constraintTop_toTopOf="@+id/imageView_detail_formation" />
+            android:layout_marginBottom="8dp"
+            android:numStars="5"
+            android:outlineAmbientShadowColor="@color/vert"
+            android:outlineSpotShadowColor="@color/applicatioTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/button_add" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -136,16 +142,15 @@
         android:id="@+id/tabLayout_formation_detail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:background="@color/applicatioTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:tabGravity="fill"
         app:tabIconTint="@color/white"
-        app:tabIndicatorColor="@color/white_black"
+        app:tabIndicatorColor="@color/colorAccent"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/ecole_formation"
+        app:tabSelectedTextColor="@color/colorAccent"
         app:tabTextColor="@color/white" />
 
     <android.support.v4.view.ViewPager

@@ -23,4 +23,11 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="rBar" parent="Widget.AppCompat.RatingBar">
+        <!-- Customize your theme here. -->
+        <item name="android:progressDrawable">@drawable/my_randingbar</item>
+        <item name="android:minHeight">16dip</item>
+        <item name="android:maxHeight">16dip</item>
+    </style>
+
 </resources>

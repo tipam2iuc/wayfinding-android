@@ -18,15 +18,19 @@
 
             <TextView
                 android:id="@+id/TextView_description_title_item_formation"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:padding="10dp"
                 android:text="Title"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
-                android:textColor="@color/blackClear"
+                android:textColor="@color/applicatioTheme"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:transitionName="trans1"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,8 +38,8 @@
                 android:id="@+id/TextView_description_item_formation"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:padding="10dp"
-                android:textColor="@color/black"
+                android:padding="15dp"
+                android:textColor="#414141"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:transitionName="trans_text_decr"
@@ -44,14 +48,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TextView_description_title_item_formation" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_formation"
-                app:layout_constraintBottom_toBottomOf="@+id/TextView_description_title_item_formation"
-                app:layout_constraintStart_toEndOf="@+id/TextView_description_title_item_formation"
-                app:layout_constraintTop_toTopOf="@+id/TextView_description_title_item_formation" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 
