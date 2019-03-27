@@ -21,6 +21,7 @@ import com.bumptech.glide.request.transition.Transition;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import e.plass.acceuilwayfinding.model.CustumAdapter;
 import e.plass.acceuilwayfinding.model.Ecole;
 import e.plass.acceuilwayfinding.model.Formation;
@@ -28,13 +29,13 @@ import e.plass.acceuilwayfinding.model.Util;
 import e.plass.acceuilwayfinding.model.ViewPageAdapter;
 
 public class DetailFormationActivity extends AppCompatActivity {
-    private Formation formation;
-    private ImageView imageView;
-    private TextView  textNameFormation,description;
-    private TextView  textDescriptionFormation;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPageAdapter viewPageAdapter;
+
+    private CircleImageView imageView;
+    private TextView        textNameFormation;
     private Toolbar toolbar;
-    private RecyclerView recyclerView;
-    private ArrayList<Ecole> ecoles;
 
 
     @Override
@@ -43,12 +44,22 @@ public class DetailFormationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_formation);
         toolbar = findViewById(R.id.Toolbar_detail_formation);
         imageView = findViewById(R.id.imageView_detail_formation);
-        recyclerView = findViewById(R.id.RecyclerView_list_school_formation);
-        description = findViewById(R.id.TextView_description_item_formation1);
-        textNameFormation = findViewById(R.id.TextView_detail_formation_item);
+        textNameFormation = findViewById(R.id.textView_title_formation_detail);
+        tabLayout = findViewById(R.id.tabLayout_formation_detail);
+        viewPager = findViewById(R.id.viewpager_formation_detail);
 
-        ecoles = Util.getEcoles();
-        initRecycleView();
+        viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
+
+        /*tabLayout.getTabAt(0).setIcon(R.drawable.ic_description);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_view_list);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_format_align_center);*/
+
+        viewPageAdapter.AddFragment(new DescriptionFormationFragment(),"Description");
+        viewPageAdapter.AddFragment(new ListEcoleFormationFragment(),"Ecoles");
+        viewPageAdapter.AddFragment(new FiliereFormationFragment(),"Filières");
+
+        viewPager.setAdapter(viewPageAdapter);
+        tabLayout.setupWithViewPager(viewPager);
 
 
         Formation currenF = Util.getCurrentFormation();
@@ -60,13 +71,10 @@ public class DetailFormationActivity extends AppCompatActivity {
         }catch (Exception ex){
             Log.d("imgFound", ex.getMessage());
         }
-
-        description.setText(currenF.getDescripetion());
         textNameFormation.setText(currenF.getName());
 
 
 
-        formation = Util.getCurrentFormation();
         setSupportActionBar(toolbar);
         toolbar.setTitle(currenF.getName());
         if(getSupportActionBar() != null){
@@ -87,13 +95,4 @@ public class DetailFormationActivity extends AppCompatActivity {
     }
 
 
-    public void initRecycleView(){
-        CustumAdapter             custumAdapter             = new CustumAdapter(getApplicationContext(),ecoles);
-        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(this,R.anim.layout_anim_slide);
-        recyclerView.setAdapter(custumAdapter);
-        recyclerView.setLayoutAnimation(layoutAnimationController);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 }

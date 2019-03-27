@@ -38,8 +38,6 @@ public class ListEcoleFormationFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_ecole_formation, container, false);
         ecoles = Util.getEcoles();
-        recyclerView = view.findViewById(R.id.RecyclerView_list_school_formation);
-        initRecycleView();
 
 
         return view;
