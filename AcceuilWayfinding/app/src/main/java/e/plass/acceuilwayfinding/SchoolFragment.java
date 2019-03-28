@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import e.plass.acceuilwayfinding.model.CustumAdapter;
 import e.plass.acceuilwayfinding.model.Ecole;
+import e.plass.acceuilwayfinding.model.SchoolAdapter;
 import e.plass.acceuilwayfinding.model.Util;
 
 import java.util.ArrayList;
@@ -65,12 +66,8 @@ public class SchoolFragment extends android.support.v4.app.Fragment {
     }
 
     public void initRecycleView(){
-        CustumAdapter             custumAdapter             = new CustumAdapter(getContext(),ecoles);
-        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(getContext(),R.anim.layout_anim_slide);
+        SchoolAdapter             custumAdapter             = new SchoolAdapter(getContext(),ecoles);
         recyclerView.setAdapter(custumAdapter);
-        recyclerView.setLayoutAnimation(layoutAnimationController);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 

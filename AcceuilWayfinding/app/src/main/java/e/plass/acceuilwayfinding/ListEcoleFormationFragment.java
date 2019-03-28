@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.List;
 
 import e.plass.acceuilwayfinding.model.CustumAdapter;
 import e.plass.acceuilwayfinding.model.Ecole;
+import e.plass.acceuilwayfinding.model.SchoolAdapter;
 import e.plass.acceuilwayfinding.model.Util;
 
 
@@ -26,6 +28,7 @@ import e.plass.acceuilwayfinding.model.Util;
 public class ListEcoleFormationFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Ecole> ecoles;
+    private SchoolAdapter schoolAdapter;
 
     public ListEcoleFormationFragment() {
         // Required empty public constructor
@@ -37,7 +40,16 @@ public class ListEcoleFormationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_ecole_formation, container, false);
+
+
+        recyclerView = view.findViewById(R.id.RecyclerView_list_school_formation1);
+        Util u = new Util();
         ecoles = Util.getEcoles();
+
+
+        schoolAdapter = new SchoolAdapter(getContext(),ecoles);
+        recyclerView.setAdapter(schoolAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
         return view;

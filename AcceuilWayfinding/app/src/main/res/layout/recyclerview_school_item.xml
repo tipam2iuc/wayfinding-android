@@ -2,22 +2,26 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="#fff">
 
     <RelativeLayout
+        android:id="@+id/rly_card"
+        android:paddingBottom="16dp"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
+        android:background="@color/cart_bg_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView4"
-            android:textColor="@color/title_recycler_item_school"
-            android:textStyle="bold"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -25,7 +29,72 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="40dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="21dp"
-            android:text="Simple text" />
+            android:layout_marginTop="20dp"
+            android:text="Simple text Text "
+            android:textColor="@color/title_recycler_item_school"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_descrption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_alignStart="@id/tv_title"
+            android:layout_alignLeft="@id/tv_title"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:lineSpacingExtra="8dp"
+
+            android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            android:textColor="@color/content_recycler_item_school" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_note"
+            android:layout_alignBottom="@+id/tv_note"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="-3dp"
+            android:layout_toStartOf="@+id/tv_note"
+            android:layout_toLeftOf="@+id/tv_note"
+            app:srcCompat="@drawable/ic_star_black_24dp" />
+
+        <TextView
+            android:id="@+id/tv_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_descrption"
+            android:layout_alignEnd="@+id/tv_descrption"
+            android:layout_alignRight="@+id/tv_descrption"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="TextView"
+            android:textColor="@color/content_recycler_item_school" />
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_school"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout"
+        android:src="@drawable/ic_account_circle" />
 </android.support.constraint.ConstraintLayout>
