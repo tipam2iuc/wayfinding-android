@@ -63,4 +63,6 @@
     <string name="formations_presentation_title">Formations</string>
     <string name="add">Ajouter</string>
     <string name="added">Ajoutée</string>
+    <string name="wyFind">Que recherchez vous ?</string>
+    <string name="selectCriter">Selectionner un critère de recherche !</string>
 </resources>

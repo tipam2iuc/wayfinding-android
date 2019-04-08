@@ -1,44 +1,20 @@
 package e.plass.acceuilwayfinding;
 
 import android.annotation.SuppressLint;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuBuilder;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.PointerIcon;
-import android.view.SubMenu;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.PopupMenu;
-import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.Toolbar;
-
-import e.plass.acceuilwayfinding.model.ParamAdapter;
-import e.plass.acceuilwayfinding.model.Paramatre;
-import e.plass.acceuilwayfinding.model.SearchAdapter;
-
-import java.util.ArrayList;
-
-import static e.plass.acceuilwayfinding.R.string.Close;
 
 public class Profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 

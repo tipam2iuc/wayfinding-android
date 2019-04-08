@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/applicatioTheme</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowActivityTransitions" tools:targetApi="lollipop">true</item>
+        <item name="android:windowActivityTransitions" tools:ignore="NewApi">true</item>
     </style>
     <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->

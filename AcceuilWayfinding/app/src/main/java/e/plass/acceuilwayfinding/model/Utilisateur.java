@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Utilisateur {
     private int id;
-    private String nom;
+    private String nom,email;
     private String preNom;
     private String dernierEcole;
     private String photo;

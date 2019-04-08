@@ -21,4 +21,8 @@
     <color name="title_recycler_item_school">#258bd6</color>
     <color name="content_recycler_item_school">#999da4</color>
 
+
+    <color name="cart_bg_color_search">#fcfcfc</color>
+
+
 </resources>

@@ -1,6 +1,7 @@
 package e.plass.acceuilwayfinding.model;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import e.plass.acceuilwayfinding.R;
+import e.plass.acceuilwayfinding.UserProfleActivity;
 
 public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchooViewHolder> {
     private Context context;
@@ -96,6 +98,11 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchooViewH
             img = itemView.findViewById(R.id.img_school);
             card = itemView.findViewById(R.id.rly_card);
             note = itemView.findViewById(R.id.tv_note);
+            card.setOnClickListener(v -> {
+                Util.setCurrentEcole(data.get(getAdapterPosition()));
+                Intent intent = new Intent(context, UserProfleActivity.class);
+                context.startActivity(intent);
+            });
         }
     }
 }

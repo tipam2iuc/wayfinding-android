@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
+            android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
@@ -60,7 +60,7 @@
             android:layout_marginBottom="-3dp"
             android:layout_toStartOf="@+id/tv_note"
             android:layout_toLeftOf="@+id/tv_note"
-            app:srcCompat="@drawable/ic_star_black_24dp" />
+            android:src="@drawable/ic_star_black_24dp" />
 
         <TextView
             android:id="@+id/tv_note"
@@ -87,14 +87,18 @@
             android:textColor="@color/content_recycler_item_school" />
     </RelativeLayout>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_school"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/relativeLayout"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout"
-        android:src="@drawable/ic_account_circle" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_account_circle"
+        app:layout_constraintEnd_toStartOf="@+id/rly_card"
+        app:layout_constraintStart_toStartOf="@+id/rly_card"
+        app:layout_constraintTop_toTopOf="@+id/rly_card" />
 </android.support.constraint.ConstraintLayout>

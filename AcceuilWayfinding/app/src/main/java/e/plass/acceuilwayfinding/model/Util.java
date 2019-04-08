@@ -2,11 +2,34 @@ package e.plass.acceuilwayfinding.model;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import e.plass.acceuilwayfinding.R;
 
 public class Util {
     private static ArrayList<Ecole>     ecoles     = new ArrayList<>();
-    private static ArrayList<Formation> formations = new ArrayList<Formation>();
+    private static ArrayList<Formation> formations = new ArrayList<>();
+    private static List<SearchType> searchTypes = new ArrayList<>();
+    private static List<Concours>concours = new ArrayList<>();
     private static Formation currentFormation;
+    private static Ecole currentEcole;
+
+    public static List<Concours> getConcours() {
+        return concours;
+    }
+
+    public static void setConcours(List<Concours> concours) {
+        Util.concours = concours;
+    }
+
+    public static Ecole getCurrentEcole() {
+        return currentEcole;
+    }
+
+    public static void setCurrentEcole(Ecole currentEcole) {
+        Util.currentEcole = currentEcole;
+    }
 
     public static Formation getCurrentFormation() {
         return currentFormation;
@@ -102,6 +125,31 @@ public class Util {
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"ma"));
 
+        //------------------------------------searchType
+        searchTypes.clear();
+        searchTypes.add(new SearchType("Les mieux notées", R.drawable.ic_favori_icons_plan));
+        searchTypes.add(new SearchType("Spécialité", R.drawable.ic_speciliste_icons_plan));
+        searchTypes.add(new SearchType("Ecole", R.drawable.ic_annuaire_icons_plan_icons_plan));
+        searchTypes.add(new SearchType("Formation", R.drawable.ic_formations_icons_plan_icons_plan));
+        searchTypes.add(new SearchType("Débouchées", R.drawable.ic_jobs_icons_plan));
+        searchTypes.add(new SearchType("Recherche avancée", R.drawable.ic_rechercheavance_icons_plan));
+
+        //***************************************************** Concours
+        concours.clear();
+        concours.add(new Concours("FGI",new Date(2019,12,20),new Date(2019,12,15)));
+        concours.add(new Concours("Polytech",new Date(2019,06,2),new Date(2019,06,9)));
+        concours.add(new Concours("Police",new Date(2019,5,20),new Date(2019,5,15)));
+        concours.add(new Concours("IUT BANDJOUN",new Date(2019,12,4),new Date(2019,12,10)));
+        concours.add(new Concours("IUC",new Date(2019,8,20),new Date(2019,8,25)));
+
+    }
+
+    public static List<SearchType> getSearchTypes() {
+        return searchTypes;
+    }
+
+    public static void setSearchTypes(List<SearchType> searchTypes) {
+        Util.searchTypes = searchTypes;
     }
 
     public static ArrayList<Ecole> getEcoles() {

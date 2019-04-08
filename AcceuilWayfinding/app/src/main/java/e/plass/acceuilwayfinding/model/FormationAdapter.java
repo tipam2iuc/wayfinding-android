@@ -7,8 +7,10 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -122,11 +124,11 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
                 }
                 }
             );
-            imageView.setOnClickListener((View v)->{
+            imageView.setOnClickListener((v)->{
                 Intent i = new Intent(context, DetailFormationActivity.class);
                 Util.setCurrentFormation(formations.get(getAdapterPosition()));
                 ActivityOptionsCompat option = ActivityOptionsCompat
-                        .makeSceneTransitionAnimation((Activity) context,imageView,"trans1");
+                        .makeSceneTransitionAnimation((Activity) context,imageView, ViewCompat.getTransitionName(imageView));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     context.startActivity(i,option.toBundle());
                 }else{
