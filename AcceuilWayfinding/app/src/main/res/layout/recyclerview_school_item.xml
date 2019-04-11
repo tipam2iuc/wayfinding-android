@@ -5,100 +5,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/containt_school_item"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
-    android:background="#fff">
+    android:layout_marginEnd="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/card_bg"
+    >
 
-    <RelativeLayout
-        android:id="@+id/rly_card"
-        android:paddingBottom="16dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:background="@color/cart_bg_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:text="Simple text Text "
-            android:textColor="@color/title_recycler_item_school"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_descrption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_title"
-            android:layout_alignStart="@id/tv_title"
-            android:layout_alignLeft="@id/tv_title"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:lineSpacingExtra="8dp"
-
-            android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-            android:textColor="@color/content_recycler_item_school" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/tv_note"
-            android:layout_alignBottom="@+id/tv_note"
-            android:layout_marginTop="-2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="-3dp"
-            android:layout_toStartOf="@+id/tv_note"
-            android:layout_toLeftOf="@+id/tv_note"
-            android:src="@drawable/ic_star_black_24dp" />
-
-        <TextView
-            android:id="@+id/tv_note"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_descrption"
-            android:layout_alignEnd="@+id/tv_descrption"
-            android:layout_alignRight="@+id/tv_descrption"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="TextView"
-            android:textColor="@color/content_recycler_item_school" />
-    </RelativeLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/img_school"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="86dp"
+        android:layout_height="80dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_account_circle"
-        app:layout_constraintEnd_toStartOf="@+id/rly_card"
-        app:layout_constraintStart_toStartOf="@+id/rly_card"
-        app:layout_constraintTop_toTopOf="@+id/rly_card" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_star_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_descrption"
+        app:layout_constraintTop_toBottomOf="@+id/tv_descrption" />
+
+    <TextView
+        android:id="@+id/tv_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="13sp"
+        android:textColor="#258bd6"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Simple text Text "
+        android:textColor="@color/applicatioThemeDark"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/img_school"
+        app:layout_constraintEnd_toStartOf="@+id/img_school"
+        app:layout_constraintStart_toStartOf="@+id/tv_descrption"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_descrption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore."
+        android:textColor="@color/content_recycler_item_school"
+        app:layout_constraintEnd_toStartOf="@+id/img_school"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView_school_item_location" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/textView_school_item_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginRight="8dp"
+        android:text="location"
+        android:textColor="@color/title_recycler_item_school"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/img_school"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 </android.support.constraint.ConstraintLayout>

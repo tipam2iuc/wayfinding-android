@@ -1,5 +1,7 @@
 package e.plass.acceuilwayfinding.model;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -8,12 +10,22 @@ import java.util.List;
 import e.plass.acceuilwayfinding.R;
 
 public class Util {
-    private static ArrayList<Ecole>     ecoles     = new ArrayList<>();
-    private static ArrayList<Formation> formations = new ArrayList<>();
-    private static List<SearchType> searchTypes = new ArrayList<>();
-    private static List<Concours>concours = new ArrayList<>();
-    private static Formation currentFormation;
-    private static Ecole currentEcole;
+    private static ArrayList<Ecole>     ecoles      = new ArrayList<>();
+    private static ArrayList<Formation> formations  = new ArrayList<>();
+    private static List<SearchType>     searchTypes = new ArrayList<>();
+    private static List<Concours>       concours    = new ArrayList<>();
+    private static Formation            currentFormation;
+    private static Ecole                currentEcole;
+
+    private static FusedLocationProviderClient fusedLocationProviderClient;
+
+    public static FusedLocationProviderClient getFusedLocationProviderClient() {
+        return fusedLocationProviderClient;
+    }
+
+    public static void setFusedLocationProviderClient(FusedLocationProviderClient fusedLocationProviderClient) {
+        Util.fusedLocationProviderClient = fusedLocationProviderClient;
+    }
 
     public static List<Concours> getConcours() {
         return concours;
@@ -39,7 +51,10 @@ public class Util {
         Util.currentFormation = currentFormation;
     }
 
-    public Util(){
+    public Util() {
+        //get current location
+
+        //init list
         ecoles.clear();
         Calendar c = Calendar.getInstance();
         c.set(2010,01,01);

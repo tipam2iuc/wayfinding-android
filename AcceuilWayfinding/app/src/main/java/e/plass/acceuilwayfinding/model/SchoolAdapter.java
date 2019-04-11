@@ -3,6 +3,7 @@ package e.plass.acceuilwayfinding.model;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -45,14 +45,14 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchooViewH
         schooViewHolder.img
                 .setAnimation(AnimationUtils
                         .loadAnimation(context,R.anim.fade_transition_animation));
-        schooViewHolder.card
+        schooViewHolder.constraintLayout
                 .setAnimation(AnimationUtils
                         .loadAnimation(context,R.anim.fade_scale_animation));
 
 
         String description = data.get(i).getDescrition().trim();
         try{
-            description = description.substring(0,130)+"...";
+            description = description.substring(0,100)+"...";
             schooViewHolder.description.setText(description);
         }catch (Exception ex){
             schooViewHolder.description.setText(data.get(i).getDescrition().trim()+"...");
@@ -86,7 +86,7 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchooViewH
 
         private TextView name,description,ville,note;
         private ImageView      img;
-        private     RelativeLayout card;
+        private ConstraintLayout constraintLayout;
 
 
         public SchooViewHolder(@NonNull View itemView) {
@@ -94,11 +94,11 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchooViewH
 
             name = itemView.findViewById(R.id.tv_title);
             description = itemView.findViewById(R.id.tv_descrption);
-            ville = itemView.findViewById(R.id.tv_date);
+            ville = itemView.findViewById(R.id.textView_school_item_location);
             img = itemView.findViewById(R.id.img_school);
-            card = itemView.findViewById(R.id.rly_card);
             note = itemView.findViewById(R.id.tv_note);
-            card.setOnClickListener(v -> {
+            constraintLayout = itemView.findViewById(R.id.containt_school_item);
+            constraintLayout.setOnClickListener(v -> {
                 Util.setCurrentEcole(data.get(getAdapterPosition()));
                 Intent intent = new Intent(context, UserProfleActivity.class);
                 context.startActivity(intent);

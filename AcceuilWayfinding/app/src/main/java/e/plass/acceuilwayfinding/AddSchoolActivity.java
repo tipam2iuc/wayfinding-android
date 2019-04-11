@@ -54,6 +54,7 @@ public class AddSchoolActivity extends AppCompatActivity {
         ville = findViewById(R.id.et_ville);
 
 
+
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         databaseReference = FirebaseDatabase.getInstance().getReference("uploads");
 

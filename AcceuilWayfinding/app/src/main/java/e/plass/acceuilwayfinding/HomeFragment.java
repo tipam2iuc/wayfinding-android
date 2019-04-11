@@ -50,7 +50,9 @@ public class HomeFragment extends android.support.v4.app.Fragment {
     public void initRecycleView2(){
         ConcourAdapter custumAdapter = new ConcourAdapter(getContext(),Util.getConcours());
         rConcours.setAdapter(custumAdapter);
-        rConcours.setLayoutManager(new LinearLayoutManager(getContext()));
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        rConcours.setLayoutManager(layoutManager);
     }
 
 }
