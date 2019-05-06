@@ -22,15 +22,15 @@
     <string name="profil">Profil</string>
     <string name="invite">Invite des amis</string>
     <string name="diconnect">Deconnection</string>
-    <string name="home">home</string>
-    <string name="school_list">list des écoles</string>
-    <string name="search">rechercher</string>
-    <string name="menu_compte">compte</string>
-    <string name="menu_formation">formations</string>
+    <string name="home">Home</string>
+    <string name="school_list">Ecoles</string>
+    <string name="search">Recherche</string>
+    <string name="menu_compte">Compte</string>
+    <string name="menu_formation">Formation</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->s
     <string name="text_sort">Trier par</string>
     <string name="menu_annonce">Annonces</string>
     <string name="top_school">Meilleurs écoles</string>
@@ -65,4 +65,6 @@
     <string name="added">Ajoutée</string>
     <string name="wyFind">Que recherchez vous ?</string>
     <string name="selectCriter">Selectionner un critère de recherche !</string>
+    <string name="title_activity_school_maps">Map</string>
+    <string name="map">MAP</string>
 </resources>

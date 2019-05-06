@@ -28,6 +28,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.concurrent.Executor;
 
+import e.plass.acceuilwayfinding.model.Util;
+
 public class Profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1 ;
@@ -57,10 +59,10 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
 
 
         //intitialisation
+        Util util = new Util();
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         
         //fetchLocation();
 
@@ -68,13 +70,12 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
 
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.app_name);
-        getSupportActionBar().setIcon(R.drawable.ic_logo);
 
         //ToolBar define
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setTitle("");
         actionbar.setHomeAsUpIndicator(R.drawable.ic_format);
         drawerLayout.addDrawerListener(
                 new DrawerLayout.DrawerListener() {
@@ -106,7 +107,7 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
         homeFragment = new HomeFragment();
         accountFragment = new AccountFragment();
         formationFragment = new FormationFragment();
-        schoolFragment = new SchoolFragment(this);
+        schoolFragment = new SchoolFragment();
         searchFragment = new SearchFragment();
 
 
@@ -156,60 +157,6 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
 
     }
 
-    private void fetchLocation() {
-        if (ContextCompat.checkSelfPermission(Profile.this,
-                Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            // Permission is not granted
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(Profile.this,
-                    Manifest.permission.READ_CONTACTS)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-
-                new AlertDialog.Builder(this).
-                        setTitle("Required loaction Permission").
-                        setMessage("You have to give this permission to access the feature").
-                        setPositiveButton("OK",(dialog, which) -> {
-
-                            ActivityCompat.requestPermissions(Profile.this,
-                                    new String[]{Manifest.permission.READ_CONTACTS},
-                                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-                        })
-                .setNegativeButton("Cancel",(dialog, which) -> {
-                    dialog.dismiss();
-                })
-                .create()
-                .show();
-
-            } else {
-                // No explanation needed; request the permission
-                ActivityCompat.requestPermissions(Profile.this,
-                        new String[]{Manifest.permission.READ_CONTACTS},
-                        MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
-        } else {
-            // Permission has already been granted
-            fusedLocationProviderClient.getLastLocation()
-                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location location) {
-                            if(location != null){
-                                Double lattitude = location.getLatitude();
-                                Double longitude = location.getLongitude();
-                                Toast.makeText(Profile.this, "lattitude : "+lattitude+" longitude : "+longitude, Toast.LENGTH_SHORT).show();
-                            }
-                    }
-                    });
-
-        }
-
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

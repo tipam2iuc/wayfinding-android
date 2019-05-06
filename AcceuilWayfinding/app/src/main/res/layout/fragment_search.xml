@@ -15,11 +15,14 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView_avance_search"
-            android:layout_width="186dp"
-            android:layout_height="134dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView_debouche_search"
-            app:layout_constraintEnd_toEndOf="@+id/cardView_formation_search"
-            app:layout_constraintTop_toTopOf="@+id/cardView_debouche_search">
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cardView_debouche_search"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_formation_search">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -57,10 +60,16 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView_debouche_search"
-            android:layout_width="186dp"
-            android:layout_height="134dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="@+id/cardView"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cardView_avance_search"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView">
 
             <android.support.constraint.ConstraintLayout
@@ -99,11 +108,14 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView_formation_search"
-            android:layout_width="186dp"
-            android:layout_height="134dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView"
-            app:layout_constraintEnd_toEndOf="@+id/cardView_specialite"
-            app:layout_constraintTop_toTopOf="@+id/cardView">
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView_avance_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_specialite">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -141,10 +153,15 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="186dp"
-            android:layout_height="134dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="@+id/CardView_plus_note"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView_debouche_search"
+            app:layout_constraintEnd_toStartOf="@+id/cardView_formation_search"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CardView_plus_note">
 
             <android.support.constraint.ConstraintLayout
@@ -225,11 +242,16 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/CardView_plus_note"
-            android:layout_width="186dp"
-            android:layout_height="134dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toStartOf="@+id/cardView_specialite"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
@@ -269,13 +291,16 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView_specialite"
-            android:layout_width="186dp"
-            android:layout_height="134dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/CardView_plus_note"
+            app:layout_constraintBottom_toTopOf="@+id/cardView_formation_search"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/CardView_plus_note">
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/CardView_plus_note"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"

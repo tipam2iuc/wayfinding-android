@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
@@ -91,7 +92,8 @@ public class AddSchoolActivity extends AppCompatActivity {
                         taskSnapshot.getUploadSessionUri().toString(),
                         (Calendar) date.getText(),
                         ville.getText().toString().trim(),"","",
-                        descr.getText().toString().trim()
+                        descr.getText().toString().trim(),
+                        new LatLng(10, 10)
 
                         );
                 String uploadId = databaseReference.push().getKey();

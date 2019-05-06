@@ -10,8 +10,6 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.transition.Fade;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -31,10 +30,15 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
     ArrayList<Formation> formations;
     ArrayList<Formation> formationsSearch;
     final int DESC = 100;
+    RequestOptions options ;
 
     public FormationAdapter(Context context, ArrayList<Formation> formations) {
         this.context = context;
         this.formations = formations;
+        options = new RequestOptions()
+                .centerCrop()
+                .placeholder(R.drawable.loadgif)
+                .error(R.drawable.loadgif);
     }
 
 
@@ -59,14 +63,16 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
     public void onBindViewHolder(@NonNull FormationViewHolder formationAdapter, int i) {
         Formation curren = formations.get(i);
         String description = curren.getDescripetion().substring(0,DESC)+"...";
-        try {
-            int id = context.getResources().getIdentifier(curren.getImage(),"drawable",context.getPackageName());
-            Glide.with(context)
-                    .load(id)
-                    .into(formationAdapter.imageView);
-        }catch (Exception ex){
-            Log.d("imgFound", ex.getMessage());
-        }
+//        try {
+//            int id = context.getResources().getIdentifier(curren.getImage(),"drawable",context.getPackageName());
+//            Glide.with(context)
+//                    .load(id)
+//                    .into(formationAdapter.imageView);
+//        }catch (Exception ex){
+//            Log.d("imgFound", ex.getMessage());
+//        }
+        Glide.with(context).load("https://vitrine123.000webhostapp.com/way_pic/imm/"+curren.getId()+".jpg").apply(options).into(formationAdapter.imageView);
+
         formationAdapter.name.setText(curren.getName());
         formationAdapter.description.setText(description.trim());
         formationAdapter.note.setText(""+curren.getNotes());

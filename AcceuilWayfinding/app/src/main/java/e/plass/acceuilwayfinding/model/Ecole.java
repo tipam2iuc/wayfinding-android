@@ -1,24 +1,31 @@
 package e.plass.acceuilwayfinding.model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.Calendar;
 
 public class Ecole {
-    private int id;
+    private int      id;
     private float    note;
-    private String name;
-    private String image;
-    private Calendar   creationDate;
-    private String ville;
-    private String quartier;
-    private String directeur;
-    private String descrition;
+    private String   name;
+    private String   image;
+    private Calendar creationDate;
+    private String   ville;
+    private String   quartier;
+    private String   directeur;
+    private String   descrition;
+    private LatLng   position;
 
-
-    //constructor
-    public Ecole() {
+    public LatLng getPosition() {
+        return position;
     }
 
-    public Ecole(int id, float note, String name, String image, Calendar creationDate, String ville, String quartier, String directeur, String descrition) {
+    public void setPosition(LatLng position) {
+        this.position = position;
+    }
+
+    //constructor
+    public Ecole(int id, float note, String name, String image, Calendar creationDate, String ville, String quartier, String directeur, String descrition, LatLng position) {
         this.id = id;
         this.note = note;
         this.name = name;
@@ -28,6 +35,7 @@ public class Ecole {
         this.quartier = quartier;
         this.directeur = directeur;
         this.descrition = descrition;
+        this.position = position;
     }
 
     public float getNote() {
