@@ -1,4 +1,4 @@
-package e.plass.acceuilwayfinding.model;
+package e.plass.acceuilwayfinding.model.Adapter;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;

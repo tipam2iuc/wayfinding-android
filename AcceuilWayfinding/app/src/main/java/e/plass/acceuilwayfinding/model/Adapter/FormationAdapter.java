@@ -1,4 +1,4 @@
-package e.plass.acceuilwayfinding.model;
+package e.plass.acceuilwayfinding.model.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,24 +21,26 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import e.plass.acceuilwayfinding.DetailFormationActivity;
 import e.plass.acceuilwayfinding.R;
+import e.plass.acceuilwayfinding.model.Util;
+import e.plass.acceuilwayfinding.model.t_domaine;
 
 public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.FormationViewHolder> {
-    private Context context;
-    ArrayList<Formation> formations;
-    ArrayList<Formation> formationsSearch;
-    final int DESC = 100;
-    RequestOptions options ;
+    private Context              context;
+    private ArrayList<t_domaine> tdomaines;
+    private final int            DESC = 100;
+    private       RequestOptions options ;
 
-    public FormationAdapter(Context context, ArrayList<Formation> formations) {
+    public FormationAdapter(Context context, ArrayList<t_domaine> tdomaines) {
         this.context = context;
-        this.formations = formations;
+        this.tdomaines = tdomaines;
         options = new RequestOptions()
                 .centerCrop()
-                .placeholder(R.drawable.loadgif)
-                .error(R.drawable.loadgif);
+                .placeholder(R.drawable.ic_30)
+                .error(R.drawable.ic_30);
     }
 
 
@@ -53,7 +55,7 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
 
 
     public interface OnItemClickListener {
-        void onItemClick(Formation formation);
+        void onItemClick(t_domaine tdomaine);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -61,8 +63,8 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
     }
     @Override
     public void onBindViewHolder(@NonNull FormationViewHolder formationAdapter, int i) {
-        Formation curren = formations.get(i);
-        String description = curren.getDescripetion().substring(0,DESC)+"...";
+        t_domaine curren      = tdomaines.get(i);
+        String    description = (curren.getDescripetion().length()>=100?curren.getDescripetion().substring(0,DESC)+"...":curren.getDescripetion());
 //        try {
 //            int id = context.getResources().getIdentifier(curren.getImage(),"drawable",context.getPackageName());
 //            Glide.with(context)
@@ -75,17 +77,17 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
 
         formationAdapter.name.setText(curren.getName());
         formationAdapter.description.setText(description.trim());
-        formationAdapter.note.setText(""+curren.getNotes());
+        formationAdapter.note.setText(String.format("%s", curren.getNotes()));
     }
 
     @Override
     public int getItemCount() {
-        return formations.size();
+        return tdomaines.size();
     }
 
 
 
-    public class FormationViewHolder extends RecyclerView.ViewHolder{
+    class FormationViewHolder extends RecyclerView.ViewHolder{
         private ImageView        imageView;
         private TextView         name;
         private TextView         description;
@@ -96,7 +98,7 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
         private Button button;
         private boolean isMore = false;
 
-        public FormationViewHolder(@NonNull final View itemView) {
+        FormationViewHolder(@NonNull final View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageview_recycler_item_formation1);
             name = itemView.findViewById(R.id.textView_recyclerview_formation_name);
@@ -111,20 +113,20 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
                     int position = getAdapterPosition();
                     if(listener != null && position != RecyclerView.NO_POSITION)
                     {
-                        listener.onItemClick(formations.get(position));
+                        listener.onItemClick(tdomaines.get(position));
                     }
                 }
             );
             button.setOnClickListener(v-> {
                 if(!isMore){
-                    description.setText(formations.get(getAdapterPosition()).getDescripetion());
+                    description.setText(tdomaines.get(getAdapterPosition()).getDescripetion());
                     isMore = true;
                     button.setText(R.string.moin);
                 }else{
-                    description.setText(formations
+                    description.setText(String.format("%s...", tdomaines
                             .get(getAdapterPosition())
                             .getDescripetion()
-                            .trim().substring(0,DESC)+"...");
+                            .trim().substring(0, DESC)));
                     button.setText(R.string.more);
                     isMore = false;
                 }
@@ -132,9 +134,9 @@ public class FormationAdapter extends RecyclerView.Adapter<FormationAdapter.Form
             );
             imageView.setOnClickListener((v)->{
                 Intent i = new Intent(context, DetailFormationActivity.class);
-                Util.setCurrentFormation(formations.get(getAdapterPosition()));
+                Util.setCurrentTdomaine(tdomaines.get(getAdapterPosition()));
                 ActivityOptionsCompat option = ActivityOptionsCompat
-                        .makeSceneTransitionAnimation((Activity) context,imageView, ViewCompat.getTransitionName(imageView));
+                        .makeSceneTransitionAnimation((Activity) context,imageView, Objects.requireNonNull(ViewCompat.getTransitionName(imageView)));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     context.startActivity(i,option.toBundle());
                 }else{

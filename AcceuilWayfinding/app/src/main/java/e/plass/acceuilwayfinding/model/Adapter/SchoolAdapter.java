@@ -1,4 +1,4 @@
-package e.plass.acceuilwayfinding.model;
+package e.plass.acceuilwayfinding.model.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,9 +19,11 @@ import java.util.List;
 
 import e.plass.acceuilwayfinding.R;
 import e.plass.acceuilwayfinding.UserProfleActivity;
+import e.plass.acceuilwayfinding.model.Ecole;
+import e.plass.acceuilwayfinding.model.Util;
 
 public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.SchooViewHolder> {
-    private Context context;
+    private Context     context;
     private List<Ecole> data;
 
     public SchoolAdapter(Context context, List<Ecole> data) {

@@ -1,17 +1,23 @@
 package e.plass.acceuilwayfinding.model;
 
-import java.util.ArrayList;
-import java.util.Comparator;
+import com.google.gson.annotations.SerializedName;
 
-public class Formation implements Comparable< Formation >{
+import java.util.ArrayList;
+
+public class t_domaine implements Comparable<t_domaine>{
+    @SerializedName("idT_domaine")
     private int id;
+    @SerializedName("nom")
     private String    name;
-    private ArrayList<String> debouches;
+    @SerializedName("description")
     private String Descripetion;
+
+
+    private ArrayList<String> debouches;
     private float notes;
     private String image;
 
-    public Formation(int id, String name, ArrayList<String> debouches, String descripetion, float notes, String image) {
+    public t_domaine(int id, String name, ArrayList<String> debouches, String descripetion, float notes, String image) {
         this.id = id;
         this.name = name;
 
@@ -21,7 +27,7 @@ public class Formation implements Comparable< Formation >{
         this.image = image;
     }
 
-    public Formation() {
+    public t_domaine() {
     }
 
     public String getImage() {
@@ -68,13 +74,9 @@ public class Formation implements Comparable< Formation >{
         return debouches;
     }
 
-    public void setDebouches(ArrayList<String> debouches) {
-        this.debouches = debouches;
-    }
-
     @Override
     public String toString() {
-        return "Formation{" +
+        return "t_domaine{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", debouches=" + debouches +
@@ -82,19 +84,19 @@ public class Formation implements Comparable< Formation >{
     }
 
     @Override
-    public int compareTo(Formation o) {
+    public int compareTo(t_domaine o) {
         return this.getName().toLowerCase().trim().compareToIgnoreCase(o.getName().trim());
     }
-    /*public static Comparator<Formation> comparableByName = new Comparator<Formation>() {
+    /*public static Comparator<t_domaine> comparableByName = new Comparator<t_domaine>() {
         @Override
-        public int compare(Formation o1, Formation o2) {
+        public int compare(t_domaine o1, t_domaine o2) {
 
             return o1.name.trim().toLowerCase().compareTo(o2.name.trim());
         }
     };
-    public static Comparator<Formation> comparableByNote = new Comparator<Formation>() {
+    public static Comparator<t_domaine> comparableByNote = new Comparator<t_domaine>() {
         @Override
-        public int compare(Formation o1, Formation o2) {
+        public int compare(t_domaine o1, t_domaine o2) {
 
             return (int) (o1.notes - o2.notes);
         }

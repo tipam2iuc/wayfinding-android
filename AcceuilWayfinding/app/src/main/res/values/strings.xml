@@ -34,7 +34,7 @@
     <string name="text_sort">Trier par</string>
     <string name="menu_annonce">Annonces</string>
     <string name="top_school">Meilleurs écoles</string>
-    <string name="top_formation">Meuiileurs formation</string>
+    <string name="top_formation">Meuiileurs tdomaine</string>
     <string name="top_annonce">Annoces recentes</string>
     <string name="more">Plus</string>
     <string name="invitation"> ajouter des amis</string>
@@ -42,7 +42,7 @@
     <string name="open">Open</string>
     <string name="Close"> Close</string>
     <string name="moin">Moin</string>
-    <string name="title_detail_formation">Detail formation</string>
+    <string name="title_detail_formation">Detail tdomaine</string>
 
     <string-array name="spiner_search">
         <item>Formation</item>

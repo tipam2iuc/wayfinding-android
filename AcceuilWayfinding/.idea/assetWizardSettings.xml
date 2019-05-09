@@ -33,9 +33,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_map" />
-                            <entry key="sourceFile" value="C:\Users\serge\Downloads\Telegram Desktop\Jobs_icons_plan.svg" />
+                            <entry key="outputName" value="ic_30" />
+                            <entry key="sourceFile" value="D:\30.svg" />
                           </map>
                         </option>
                       </PersistentState>

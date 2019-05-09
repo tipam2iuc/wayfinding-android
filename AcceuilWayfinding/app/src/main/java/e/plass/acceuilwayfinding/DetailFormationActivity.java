@@ -4,36 +4,19 @@ import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewParentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.transition.Transition;
-
-import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import e.plass.acceuilwayfinding.model.CustumAdapter;
-import e.plass.acceuilwayfinding.model.Ecole;
-import e.plass.acceuilwayfinding.model.Formation;
+import e.plass.acceuilwayfinding.model.t_domaine;
 import e.plass.acceuilwayfinding.model.Util;
-import e.plass.acceuilwayfinding.model.ViewPageAdapter;
-
-import static e.plass.acceuilwayfinding.R.drawable.bc_vert_add;
+import e.plass.acceuilwayfinding.model.Adapter.ViewPageAdapter;
 
 public class DetailFormationActivity extends AppCompatActivity {
     private TabLayout tabLayout;
@@ -77,7 +60,7 @@ public class DetailFormationActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
 
-        Formation currenF = Util.getCurrentFormation();
+        t_domaine currenF = Util.getCurrentTdomaine();
         try {
             int id = this.getResources().getIdentifier(currenF.getImage(),"drawable",this.getPackageName());
             Glide.with(this)

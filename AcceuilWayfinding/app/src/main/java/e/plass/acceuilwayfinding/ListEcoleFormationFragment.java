@@ -10,15 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import e.plass.acceuilwayfinding.model.CustumAdapter;
+import e.plass.acceuilwayfinding.model.Adapter.CustumAdapter;
 import e.plass.acceuilwayfinding.model.Ecole;
-import e.plass.acceuilwayfinding.model.SchoolAdapter;
+import e.plass.acceuilwayfinding.model.Adapter.SchoolAdapter;
 import e.plass.acceuilwayfinding.model.Util;
 
 

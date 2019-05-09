@@ -1,4 +1,4 @@
-package e.plass.acceuilwayfinding.model;
+package e.plass.acceuilwayfinding.model.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import e.plass.acceuilwayfinding.R;
+import e.plass.acceuilwayfinding.model.Ecole;
 
 public class CustumAdapter extends RecyclerView.Adapter<CustumAdapter.ViewHolder> {
     private Context          context;

@@ -1,4 +1,4 @@
-package e.plass.acceuilwayfinding.model;
+package e.plass.acceuilwayfinding.model.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import e.plass.acceuilwayfinding.R;
+import e.plass.acceuilwayfinding.model.SearchType;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHolder> {
     private Context          context;

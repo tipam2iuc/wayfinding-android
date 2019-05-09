@@ -12,10 +12,10 @@ import e.plass.acceuilwayfinding.R;
 
 public class Util {
     private static ArrayList<Ecole>     ecoles      = new ArrayList<>();
-    private static ArrayList<Formation> formations  = new ArrayList<>();
+    private static ArrayList<t_domaine> tdomaines   = new ArrayList<>();
     private static List<SearchType>     searchTypes = new ArrayList<>();
     private static List<Concours>       concours    = new ArrayList<>();
-    private static Formation            currentFormation;
+    private static t_domaine            currentTdomaine;
     private static Ecole                currentEcole;
 
     private static FusedLocationProviderClient fusedLocationProviderClient;
@@ -44,12 +44,12 @@ public class Util {
         Util.currentEcole = currentEcole;
     }
 
-    public static Formation getCurrentFormation() {
-        return currentFormation;
+    public static t_domaine getCurrentTdomaine() {
+        return currentTdomaine;
     }
 
-    public static void setCurrentFormation(Formation currentFormation) {
-        Util.currentFormation = currentFormation;
+    public static void setCurrentTdomaine(t_domaine currentTdomaine) {
+        Util.currentTdomaine = currentTdomaine;
     }
 
     public Util() {
@@ -105,45 +105,45 @@ public class Util {
 
 
         //------------------------------------------------------------
-        formations.clear();
+        tdomaines.clear();
         ArrayList<String> d = new ArrayList<String>();
-        d.add("Formation");
-        d.add("Formation");
-        d.add("Formation");
-        d.add("Formation");
-        d.add("Formation");
-        d.add("Formation");
-        formations.add(new Formation(1,"Informatique",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        d.add("t_domaine");
+        d.add("t_domaine");
+        d.add("t_domaine");
+        d.add("t_domaine");
+        d.add("t_domaine");
+        d.add("t_domaine");
+        tdomaines.add(new t_domaine(1,"Informatique",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"info"));
-        formations.add(new Formation(2,"Business",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        tdomaines.add(new t_domaine(2,"Business",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"busi"));
-        formations.add(new Formation(3,"Droit",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        tdomaines.add(new t_domaine(3,"Droit",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"dr"));
-        formations.add(new Formation(4,"Langue",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        tdomaines.add(new t_domaine(4,"Langue",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"ln"));
-        formations.add(new Formation(5,"Comptabilité",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        tdomaines.add(new t_domaine(5,"Comptabilité",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"compta"));
-        formations.add(new Formation(6,"Architecture",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        tdomaines.add(new t_domaine(6,"Architecture",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"arch"));
 
-        formations.add(new Formation(7,"Santé",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        tdomaines.add(new t_domaine(7,"Santé",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"sn"));
 
-        formations.add(new Formation(8,"Mathématique",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
+        tdomaines.add(new t_domaine(8,"Mathématique",d," est un domaine d'activité scientifique, technique et industriel concernant le traitement automatique de l'information par l'exécution de programmes informatiques par des machines : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.\n" +
                 "\n" +
                 "Ces champs d'application peuvent être séparés en deux branches, l'une, de nature théorique, qui concerne la définition de concepts et modèles, et l'autre, de nature pratique, qui s'intéresse aux techniques concrètes de mise en œuvre. Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine sont accessibles à un plus large public. ",
                 15.7f,"ma"));
@@ -153,7 +153,7 @@ public class Util {
         searchTypes.add(new SearchType("Les mieux notées", R.drawable.ic_favori_icons_plan));
         searchTypes.add(new SearchType("Spécialité", R.drawable.ic_speciliste_icons_plan));
         searchTypes.add(new SearchType("Ecole", R.drawable.ic_annuaire_icons_plan_icons_plan));
-        searchTypes.add(new SearchType("Formation", R.drawable.ic_formations_icons_plan_icons_plan));
+        searchTypes.add(new SearchType("t_domaine", R.drawable.ic_formations_icons_plan_icons_plan));
         searchTypes.add(new SearchType("Débouchées", R.drawable.ic_jobs_icons_plan));
         searchTypes.add(new SearchType("Recherche avancée", R.drawable.ic_rechercheavance_icons_plan));
 
@@ -183,11 +183,11 @@ public class Util {
         Util.ecoles = ecoles;
     }
 
-    public static ArrayList<Formation> getFormations() {
-        return formations;
+    public static ArrayList<t_domaine> getTdomaines() {
+        return tdomaines;
     }
 
-    public static void setFormations(ArrayList<Formation> formations) {
-        Util.formations = formations;
+    public static void setTdomaines(ArrayList<t_domaine> tdomaines) {
+        Util.tdomaines = tdomaines;
     }
 }

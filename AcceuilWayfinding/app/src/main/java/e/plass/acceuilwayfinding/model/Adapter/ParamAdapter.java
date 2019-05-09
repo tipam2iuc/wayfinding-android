@@ -1,4 +1,4 @@
-package e.plass.acceuilwayfinding.model;
+package e.plass.acceuilwayfinding.model.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -14,10 +14,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import e.plass.acceuilwayfinding.R;
+import e.plass.acceuilwayfinding.model.Paramatre;
 
 public class ParamAdapter extends RecyclerView.Adapter<ParamAdapter.ViewHolder> {
     private ArrayList<Paramatre> paramatres = new ArrayList<>();
-    private Context mContext;
+    private Context              mContext;
 
     public ParamAdapter(Context mContext,ArrayList<Paramatre> paramatres) {
         this.paramatres = paramatres;

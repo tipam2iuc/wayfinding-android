@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import e.plass.acceuilwayfinding.model.ConcourAdapter;
-import e.plass.acceuilwayfinding.model.SchoolAdapter;
+import e.plass.acceuilwayfinding.model.Adapter.ConcourAdapter;
+import e.plass.acceuilwayfinding.model.Adapter.SchoolAdapter;
 import e.plass.acceuilwayfinding.model.Util;
 
 

@@ -2,6 +2,7 @@ package e.plass.acceuilwayfinding;
 
 
 import android.Manifest;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -38,7 +39,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
 import e.plass.acceuilwayfinding.model.Ecole;
-import e.plass.acceuilwayfinding.model.SchoolAdapter;
+import e.plass.acceuilwayfinding.model.Adapter.SchoolAdapter;
 import e.plass.acceuilwayfinding.model.Util;
 import edmt.dev.advancednestedscrollview.AdvancedNestedScrollView;
 import edmt.dev.advancednestedscrollview.MaxHeightRecyclerView;
@@ -196,12 +197,13 @@ public class SchoolFragment extends android.support.v4.app.Fragment implements O
 
     private void onMapClick(LatLng latLng1) {
         Intent i = new Intent(getContext(), SchoolMapsActivity.class);
-//        ActivityOptions options = ActivityOptions
-//                .makeSceneTransitionAnimation(getActivity(), fragment, "robot");
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-//            startActivity(i, options.toBundle());
-//        } else {
+        ActivityOptions options = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            options = ActivityOptions
+                    .makeSceneTransitionAnimation(getActivity(), fragment, "robot");
+            startActivity(i, options.toBundle());
+        }else{
             startActivity(i);
-        //}
+        }
     }
 }

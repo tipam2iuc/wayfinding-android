@@ -1,4 +1,4 @@
-package e.plass.acceuilwayfinding.model;
+package e.plass.acceuilwayfinding.model.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -12,21 +12,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import e.plass.acceuilwayfinding.R;
+import e.plass.acceuilwayfinding.model.Concours;
 
 public class ConcourAdapter extends RecyclerView.Adapter<ConcourAdapter.ViewHolder> {
-    Context context;
-    List<Concours> concours = new ArrayList<>();
+    private Context        context;
+    private List<Concours> concours = new ArrayList<>();
 
     public ConcourAdapter(Context context,List<Concours> concours) {
         this.concours = concours;
         this.context = context;
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recyclerview_concour_item,viewGroup,false);
-        ViewHolder viewHolder = new ViewHolder(view);
+        final ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
@@ -34,8 +36,8 @@ public class ConcourAdapter extends RecyclerView.Adapter<ConcourAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Concours curr = concours.get(i);
         viewHolder.name.setText(curr.getName());
-        viewHolder.datel.setText("Date limite de dépôt "+curr.getDate(curr.getLimite()));
-        viewHolder.dated.setText("Date du concours : "+curr.getDate(curr.getDebut()));
+        viewHolder.datel.setText(String.format("Date limite de dépôt %s", curr.getDate(curr.getLimite())));
+        viewHolder.dated.setText(String.format("Date du concours : %s", curr.getDate(curr.getDebut())));
     }
 
     @Override
@@ -43,9 +45,9 @@ public class ConcourAdapter extends RecyclerView.Adapter<ConcourAdapter.ViewHold
         return concours.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name,datel,dated;
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             name  = itemView.findViewById(R.id.textView_concours_item_tilte);
             dated  = itemView.findViewById(R.id.textView_concours_item_date);
