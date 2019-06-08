@@ -30,7 +30,8 @@
     <color name="profile_frame">#f2f6fd</color>
 
 
-    <color name="cart_bg_color_search">#D3D3D3</color>
+    <color name="cart_bg_color_search">#A2A1A1</color>
+    <color name="transparent">#00FFFFFF</color>
 
 
 </resources>

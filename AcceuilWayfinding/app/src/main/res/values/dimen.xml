@@ -13,6 +13,10 @@
     <dimen name="desc_padding">40dp</dimen>
 
 
+    <dimen name="min_width">380dp</dimen>
+    <dimen name="max_width">500dp</dimen>
+
+
 
 
 

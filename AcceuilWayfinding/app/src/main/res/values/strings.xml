@@ -67,4 +67,13 @@
     <string name="selectCriter">Selectionner un critère de recherche !</string>
     <string name="title_activity_school_maps">Map</string>
     <string name="map">MAP</string>
+    <string name="conn_msg">Votre plateforme d\'aide à l\'orientation universitaire et professionnelle</string>
+    <string name="email_hint">Votre adresse email</string>
+    <string name="password_hint">Votre mot de passe</string>
+    <string name="new_logo">logo</string>
+    <string name="logo">logo 1</string>
+    <string name="legal">Copyright TIPAM 2019, Tous droit réservés</string>
+    <string name="btn_connect">se connecter</string>
+    <string name="mot_de_passe_oublie">Mot de passe oublié ?</string>
+    <string name="creer_compte">Créer un compte</string>
 </resources>
