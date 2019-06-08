@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#45145D</color>
+    <color name="colorPrimaryDark">#340649</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="conn_bg">#E645145D</color>
+    <color name="white">#fff</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="cart_bg_color_search">#A2A1A1</color>
+    <color name="theme_orange">#4489FF</color>
+    <color name="black">#000</color>
+    <color name="placeholder">#dddddddd</color>
+    <color name="domaine_sec_1">#FF8A21</color>
+    <color name="domaine_sec_2">#3933E8</color>
+    <color name="domaine_sec_3">#38CFFF</color>
+</resources>

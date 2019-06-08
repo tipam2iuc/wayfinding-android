@@ -1,0 +1,42 @@
+<resources>
+	<string name = "app_name">WayFinding</string>
+	
+	<string name = "hello_blank_fragment">Hello blank fragment</string>
+	<string name = "description">Description</string>
+	<string name = "formations_presentation_title">Formations</string>
+	<string name = "add">Ajouter</string>
+	<string name = "added">Ajoutée</string>
+	<string name = "wyFind">Que recherchez vous ?</string>
+	<string name = "selectCriter">Selectionner un critère de recherche !</string>
+	<string name = "title_activity_school_maps">Map</string>
+	<string name = "map">MAP</string>
+	<string name = "conn_msg">Votre plateforme d\'aide à l\'orientation universitaire et professionnelle</string>
+	<string name = "email_hint">Votre adresse email</string>
+	<string name = "password_hint">Votre mot de passe</string>
+	<string name = "new_logo">logo</string>
+	<string name = "logo">logo 1</string>
+	<string name = "legal">Copyright TIPAM 2019, Tous droit réservés</string>
+	<string name = "btn_connect">se connecter</string>
+	<string name = "mot_de_passe_oublie">
+		<u>Mot de passe oublié ?</u>
+	</string>
+	<string name = "creer_compte">Créer un compte</string>
+	<string name = "title_test">Test d\'orientation</string>
+	<string name = "description_card_passer_test">Passez votre spychotest afin de bénéficier d\'une meilleure
+		orientation
+	</string>
+	<string name = "pourcent_default">0/100 Questions</string>
+	<string name = "domaine_home_title">Domaines de formations</string>
+	<string name = "univ_populaire">Universités populaires</string>
+	<string name = "domaines_list">Domaines</string>
+	<string name = "concour_list">Concours</string>
+	<string name = "home">Accueil</string>
+	<string name = "school_list">Ecoles</string>
+	<string name = "sec_indus">Ecoles</string>
+	<string name = "sect_tech_indus">Secteur Technologique et Industriel</string>
+	<string name = "nbre_domaine">10 Domaine(s) trouvé(s)</string>
+	<string name = "sect_prim">Secteur Primaire</string>
+	<string name = "sect_ter">Secteur Tertiaire</string>
+	<string name = "welcomeMsg">Bonjour</string>
+	<string name = "errorText">Erreur</string>
+</resources>
