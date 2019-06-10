@@ -58,4 +58,7 @@ dependencies {
 
     //design search view
     implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
+
+    //animation
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.1'
 }
