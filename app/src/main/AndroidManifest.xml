@@ -11,15 +11,21 @@
 			android:roundIcon = "@mipmap/ic_launcher_round"
 			android:supportsRtl = "true"
 			android:theme = "@style/AppTheme">
-		<activity android:name = ".Activity.AnimRecycler">
+		<activity android:name = ".Activity.Slider3">
+		</activity>
+		<activity android:name = ".Activity.Slider2">
+		</activity>
+		<activity android:name = ".Activity.Slider1">
 			<intent-filter>
 				<action android:name = "android.intent.action.MAIN" />
 				
 				<category android:name = "android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name = ".Register">
+		<activity android:name = ".Activity.AnimRecycler">
 		
+		</activity>
+		<activity android:name = ".Register">
 		</activity>
 		<activity android:name = ".Activity.DetailDomaineActivity">
 		</activity>

@@ -65,5 +65,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
 
     //
-    implementation "com.anulyakhare:com.amulyakhare.textdrawable:1.0.1"
+    //implementation "com.anulyakhare:com.amulyakhare.textdrawable:1.0.1"
+
+    //image circulaire
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
 }
