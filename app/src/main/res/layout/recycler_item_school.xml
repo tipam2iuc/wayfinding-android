@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
-     android:layout_width = "match_parent"
-     android:layout_height = "match_parent"
-		android:orientation="vertical"
-		android:clipChildren="false"
-		android:clipToPadding="false"
->
+              android:layout_width = "match_parent"
+              android:layout_height = "wrap_content"
+              xmlns:folding-cell="http://schemas.android.com/apk/res-auto"
+              android:orientation = "vertical"
+              android:clipChildren = "false"
+              android:clipToPadding = "false"
+              android:layout_marginTop = "5dp">
 	<com.ramotion.foldingcell.FoldingCell
 			
-			android:id="@+id/folding_cell_school"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:id = "@+id/folding_cell_school"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			
+			folding-cell:additionalFlipsCount="2"
+			folding-cell:animationDuration="1300"
+			folding-cell:backSideColor="@color/colorPrimary"
+			folding-cell:cameraHeight="30"
+	
+	>
 		
 		<LinearLayout
-				android:id="@+id/cell_content_view"
-				android:layout_width="match_parent"
-				android:orientation="vertical"
-				android:layout_height="wrap_content"
-				android:visibility="gone">
-			<include layout="@layout/recyclerview_item_school_detail_deroul"/>
+				android:id = "@+id/cell_content_view"
+				android:layout_width = "match_parent"
+				android:orientation = "vertical"
+				android:layout_height = "wrap_content"
+				android:visibility = "gone">
+			<include layout = "@layout/recyclerview_item_school_detail_deroul" android:id = "@+id/card_deroul" />
 		</LinearLayout>
 		​
 		<LinearLayout
-				android:id="@+id/cell_title_view"
-				android:orientation="vertical"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content">
-			<include layout="@layout/recyclerview_item_school_school_bottom"/>
+				android:id = "@+id/cell_title_view"
+				android:orientation = "vertical"
+				android:layout_width = "match_parent"
+				android:layout_height = "wrap_content">
+			<include layout = "@layout/recyclerview_item_school_school_bottom" android:layout_width = "match_parent"
+			         android:layout_height = "wrap_content" />
 		</LinearLayout>
 		​
 	</com.ramotion.foldingcell.FoldingCell>

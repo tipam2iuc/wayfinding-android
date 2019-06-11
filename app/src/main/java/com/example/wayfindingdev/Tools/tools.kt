@@ -7,3 +7,4 @@ import com.example.wayfindingdev.Model.User
 var currentUser: User? = null
 var schools:List<School>? = null
 var domaines:List<Domaine>? = null
+const val MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey"
