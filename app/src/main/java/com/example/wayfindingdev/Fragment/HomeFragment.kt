@@ -109,7 +109,7 @@ class HomeFragment : Fragment() {
         call.enqueue(object : Callback<SchoolList> {
             override fun onResponse(call: Call<SchoolList>, response: Response<SchoolList>) {
                 if (response.body() != null) {
-                    if (response.body()!!.statut === 1) {
+                    if (response.body()!!.statut == 1) {
                         schools = response.body()!!.schools!!
                         initRecyclerSchool(schools!!)
                         shimmerLayout.stopShimmerAnimation()

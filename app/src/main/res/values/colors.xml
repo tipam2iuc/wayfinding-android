@@ -13,4 +13,6 @@
     <color name="domaine_sec_1">#FF8A21</color>
     <color name="domaine_sec_2">#3933E8</color>
     <color name="domaine_sec_3">#38CFFF</color>
+    <color name = "tiret">#bfbbbb</color>
+
 </resources>

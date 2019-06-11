@@ -39,4 +39,19 @@
 	<string name = "sect_ter">Secteur Tertiaire</string>
 	<string name = "welcomeMsg">Bonjour</string>
 	<string name = "errorText">Erreur</string>
+	<string name = "default_school_location">Ange-Raphaele-Douala-Cameroun</string>
+	<string name = "default_school_name">Université De Douala</string>
+	<string name = "default_nomber_filiere">07 Filières</string>
+	<string name = "default_nombre_campus">03 Campus</string>
+	<string name = "default_type_univ">Université de l\'Etat</string>
+	<string name = "default_cration_date">Creé en 1972</string>
+	<string name = "lorem">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
+		was born and I will give you a complete account of the system, and expound the actual teachings of the great
+		explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure
+		itself, because it is pleasure, but because those who do not
+	</string>
+	<string name = "consulter">Consulter</string>
+
+
 </resources>
+

@@ -101,7 +101,7 @@ class DomaineFragment : Fragment() {
             }
         }
         initRecyclerDomaine(pri, primaire)
-        var texte = ""
+        var texte:String
         var debut = ""
         if (pri.size < 1)
             texte = " Domaine trouvé"
