@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+              xmlns:app = "http://schemas.android.com/apk/res-auto" xmlns:tools = "http://schemas.android.com/tools"
+              android:layout_width = "match_parent"
+              android:layout_height = "wrap_content"
+              android:orientation = "vertical"
+              android:visibility = "gone">
+    
+    <!-- content header line -->
+    
+    <!-- content header image -->
+    <android.support.constraint.ConstraintLayout
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content">
+    
+        <ImageView
+                android:id = "@+id/head_image"
+                android:layout_width = "match_parent"
+                android:layout_height = "160dp"
+                android:scaleType = "centerCrop"
+                android:src = "@drawable/arr" app:layout_constraintStart_toStartOf = "parent"
+                app:layout_constraintTop_toTopOf = "parent" app:layout_constraintEnd_toEndOf = "parent"
+                app:layout_constraintBottom_toBottomOf = "parent" />
+        <android.support.constraint.ConstraintLayout
+                android:layout_width = "0dp"
+                android:layout_height = "wrap_content"
+                app:layout_constraintBottom_toBottomOf = "@+id/head_image"
+                app:layout_constraintEnd_toEndOf = "parent" app:layout_constraintStart_toStartOf = "parent"
+                android:background = "@drawable/bg_price_bac_concour">
+    
+            <ImageView
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:src = "@drawable/ic_monetization_on_black_24dp"
+                    android:id = "@+id/imageView7" app:layout_constraintTop_toTopOf = "parent"
+                    android:layout_marginTop = "8dp"
+                    app:layout_constraintEnd_toEndOf = "@+id/textView16"
+                    app:layout_constraintStart_toStartOf = "@+id/textView16" />
+            <TextView
+                    android:text = "50 000 XAF"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:id = "@+id/textView16"
+                    android:textColor = "@color/white"
+                    app:layout_constraintBottom_toBottomOf = "parent"
+                    app:layout_constraintTop_toBottomOf = "@+id/imageView5" android:layout_marginBottom = "8dp"
+                    android:textSize = "12sp" android:layout_marginEnd = "8dp"
+                    app:layout_constraintEnd_toEndOf = "parent" app:layout_constraintStart_toEndOf = "@+id/textView15"
+                    android:layout_marginStart = "8dp" app:layout_constraintHorizontal_bias = "0.5" />
+            <ImageView
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    app:srcCompat = "@drawable/ic_map_black_24dp"
+                    android:id = "@+id/imageView5" app:layout_constraintTop_toTopOf = "parent"
+                    android:layout_marginTop = "8dp" app:layout_constraintStart_toStartOf = "@+id/textView15"
+                    app:layout_constraintEnd_toEndOf = "@+id/textView15" />
+            <TextView
+                    android:text = "Campus de Logbessou"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    app:layout_constraintStart_toStartOf = "parent"
+                    android:layout_marginStart = "16dp"
+                    android:id = "@+id/textView15"
+                    android:textColor = "@color/white"
+                    app:layout_constraintBottom_toBottomOf = "parent"
+                    app:layout_constraintTop_toBottomOf = "@+id/imageView5" android:layout_marginBottom = "8dp"
+                    android:textSize = "12sp" app:layout_constraintHorizontal_bias = "0.5"
+                    app:layout_constraintEnd_toStartOf = "@+id/textView16"
+                    app:layout_constraintHorizontal_chainStyle = "spread_inside" />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+    
+    <!-- content body layout -->
+    <LinearLayout
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:background = "@color/bgContent"
+            android:orientation = "vertical">
+    
+        <!-- avatar and name part -->
+        <RelativeLayout
+                android:layout_width = "wrap_content"
+                android:layout_height = "match_parent" android:paddingTop = "2dp">
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "wrap_content"
+                    android:background = "@color/bgContent"
+                    android:baselineAligned = "false"
+            >
+    
+                <!-- LEFT TITLE PART -->
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width = "80dp"
+                        android:layout_height = "0dp"
+                        android:layout_weight = "3"
+                        android:gravity = "center_horizontal"
+                        android:orientation = "vertical"
+                        app:layout_constraintStart_toStartOf = "parent" app:layout_constraintTop_toTopOf = "parent"
+                        android:id = "@+id/constraintLayout3" app:layout_constraintHorizontal_bias = "0.5"
+                        app:layout_constraintEnd_toStartOf = "@+id/constraintLayout2"
+                        app:layout_constraintBottom_toBottomOf = "@+id/constraintLayout2"
+                        android:background = "#4D754F">
+    
+                    <TextView
+                            android:id = "@+id/text_view_concour_monthyear"
+                            android:layout_width = "0dp"
+                            android:layout_height = "wrap_content"
+                            android:layout_alignParentLeft = "true"
+                            android:layout_alignParentStart = "true"
+                            android:textColor = "@android:color/white"
+                            android:textSize = "14sp"
+                            android:text = "06-2018"
+
+                            android:layout_marginTop = "8dp"
+                            app:layout_constraintTop_toBottomOf = "@+id/title_from_to_dots_divider3"
+                            android:layout_marginBottom = "8dp"
+                            app:layout_constraintBottom_toBottomOf = "parent" android:layout_marginStart = "8dp"
+                            app:layout_constraintStart_toStartOf = "parent" android:layout_marginEnd = "8dp"
+                            app:layout_constraintEnd_toEndOf = "parent" android:textAlignment = "center" />
+                    <ImageView
+                            android:id = "@+id/title_from_to_dots_divider3"
+                            android:layout_width = "match_parent"
+                            android:layout_height = "1dp"
+                            android:src = "@color/contentDividerLine"
+                            app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_day"
+                            app:layout_constraintBottom_toTopOf = "@+id/text_view_concour_monthyear" />
+                    <TextView
+                            android:id = "@+id/text_view_concour_day"
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            android:layout_alignParentLeft = "true"
+                            android:layout_alignParentStart = "true"
+                            android:textColor = "@android:color/white"
+                            android:textSize = "26sp"
+                            android:text = "25"
+
+                            android:layout_marginTop = "8dp"
+                            app:layout_constraintTop_toTopOf = "parent" android:layout_marginStart = "8dp"
+                            app:layout_constraintStart_toStartOf = "parent" android:layout_marginEnd = "8dp"
+                            app:layout_constraintEnd_toEndOf = "parent" app:layout_constraintHorizontal_bias = "0.5"
+                            app:layout_constraintBottom_toTopOf = "@+id/title_from_to_dots_divider3"
+                            app:layout_constraintVertical_chainStyle = "packed" />
+
+
+                </android.support.constraint.ConstraintLayout>
+                <!-- RIGHT TITLE PART -->
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width = "0dp"
+                        android:layout_height = "wrap_content"
+                        android:layout_weight = "1"
+                        android:paddingEnd = "20dp"
+                        android:paddingLeft = "15dp"
+                        android:paddingRight = "20dp"
+                        android:paddingStart = "15dp"
+                        android:paddingTop = "10dp" app:layout_constraintBottom_toBottomOf = "parent"
+                        android:id = "@+id/constraintLayout2"
+                        app:layout_constraintStart_toEndOf = "@+id/constraintLayout3"
+                        app:layout_constraintHorizontal_bias = "0.5" app:layout_constraintEnd_toEndOf = "parent"
+                        app:layout_constraintTop_toTopOf = "parent">
+    
+                    <TextView
+                            android:id = "@+id/text_view_concour_name"
+                            android:layout_width = "0dp"
+                            android:layout_height = "wrap_content"
+                            android:ellipsize = "marquee"
+                            android:fadingEdge = "horizontal"
+                            android:singleLine = "true"
+                            android:textColor = "@android:color/black"
+                            android:textSize = "18sp" tools:text = "Réseau et sécurité"
+                            app:layout_constraintTop_toTopOf = "parent" app:layout_constraintStart_toStartOf = "parent"
+                            android:layout_marginStart = "8dp"
+                            app:layout_constraintEnd_toEndOf = "parent" />
+                    <ImageView
+                            android:id = "@+id/title_from_to_dots_divider"
+                            android:layout_width = "0dp"
+                            android:layout_height = "1dp"
+                            android:layout_below = "@id/text_view_concour_name"
+                            android:src = "@color/contentDividerLine"
+                            android:layout_marginTop = "8dp"
+                            app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_school"
+                            app:layout_constraintStart_toStartOf = "@+id/text_view_concour_school"
+                            android:layout_marginEnd = "8dp"
+                            app:layout_constraintEnd_toEndOf = "@+id/text_view_concour_school" />
+                    <TextView
+                            android:text = "Niveau : BAC+3"
+                            android:layout_width = "0dp"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/text_view_concour_niveau"
+                            app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_name"
+                            app:layout_constraintStart_toStartOf = "@+id/text_view_concour_name"
+                            app:layout_constraintEnd_toEndOf = "@+id/text_view_concour_name" />
+                    <TextView
+                            android:text = "Organisé par : Institut universitaire de la côte"
+                            android:layout_width = "0dp"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/text_view_concour_school"
+                            app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_niveau"
+                            app:layout_constraintStart_toStartOf = "@+id/text_view_concour_niveau"
+                            app:layout_constraintEnd_toEndOf = "@+id/text_view_concour_niveau"
+                            android:layout_marginTop = "2dp" />
+                    <TextView
+                            android:text = "+237 690981056"
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            app:layout_constraintBottom_toBottomOf = "parent"
+                            android:id = "@+id/text_view_concour_tel"
+                            app:layout_constraintTop_toBottomOf = "@+id/title_from_to_dots_divider"
+                            app:layout_constraintStart_toStartOf = "@+id/title_from_to_dots_divider"
+                            android:layout_marginTop = "8dp"
+                            app:layout_constraintHorizontal_bias = "0.5"
+                            app:layout_constraintEnd_toStartOf = "@+id/text_view_concour_email"
+                            app:layout_constraintHorizontal_chainStyle = "spread_inside"
+                            android:drawableLeft = "@drawable/ic_local_phone_black_24dp" android:drawablePadding = "3dp"
+                            android:layout_marginBottom = "8dp" android:textSize = "10sp" />
+                    <TextView
+                            android:text = "mevaajules2@gmail"
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            android:id = "@+id/text_view_concour_email"
+                            app:layout_constraintEnd_toEndOf = "@+id/title_from_to_dots_divider"
+                            app:layout_constraintBottom_toBottomOf = "@+id/text_view_concour_tel"
+                            app:layout_constraintTop_toTopOf = "@+id/text_view_concour_tel"
+                            app:layout_constraintStart_toEndOf = "@+id/text_view_concour_tel"
+                            app:layout_constraintHorizontal_bias = "0.5"
+                            android:layout_marginStart = "16dp"
+                            android:drawableLeft = "@drawable/ic_mail_black_24dp" android:drawablePadding = "3dp"
+                            android:textSize = "10sp" />
+
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.constraint.ConstraintLayout>
+        </RelativeLayout>
+    
+        <!-- divider line -->
+        <ImageView
+                android:layout_width = "match_parent"
+                android:layout_height = "1dp"
+                android:layout_marginBottom = "2dp"
+                android:src = "@color/contentDividerLine" />
+    
+        <!-- addresses part -->
+        <android.support.constraint.ConstraintLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:baselineAligned = "false"
+                android:orientation = "horizontal" android:background = "@color/colorPrimary">
+    
+            <ImageView
+                    android:id = "@+id/title_from_to_dots_divider4"
+                    android:layout_width = "0dp"
+                    android:layout_height = "0.5dp"
+                    android:src = "@color/contentDividerLine"
+                    app:layout_constraintStart_toEndOf = "@+id/textView20" app:layout_constraintEnd_toEndOf = "parent"
+                    app:layout_constraintBottom_toBottomOf = "@+id/textView20" android:layout_marginStart = "8dp"
+            />
+            <ImageView
+                    android:id = "@+id/title_from_to_dots_divider2"
+                    android:layout_width = "0dp"
+                    android:layout_height = "0.5dp"
+                    android:src = "@color/contentDividerLine"
+                    app:layout_constraintEnd_toEndOf = "parent"
+                    app:layout_constraintBottom_toBottomOf = "@+id/textView18"
+                    android:layout_marginBottom = "3dp"
+                    app:layout_constraintStart_toStartOf = "@+id/title_from_to_dots_divider4" />
+            <ImageView
+                    android:layout_width = "match_parent"
+                    android:layout_height = "1dp"
+                    android:src = "@color/contentDividerLine" android:id = "@+id/imageView9"
+                    app:layout_constraintTop_toBottomOf = "@+id/recyclerView" android:layout_marginTop = "8dp" />
+            <TextView
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    app:layout_constraintStart_toStartOf = "parent" android:layout_marginStart = "16dp"
+                    android:id = "@+id/textView20" app:layout_constraintTop_toBottomOf = "@+id/textView19"
+                    android:text = "@string/documentrequis_title"
+                    android:textColor = "@color/textPrimary" android:layout_marginTop = "16dp" />
+            <ImageView
+                    android:layout_width = "match_parent"
+                    android:layout_height = "1dp"
+                    android:src = "@color/contentDividerLine" android:id = "@+id/imageView8"
+                    app:layout_constraintEnd_toEndOf = "parent"
+                    app:layout_constraintTop_toBottomOf = "@+id/textView17"
+                    app:layout_constraintStart_toStartOf = "parent" android:layout_marginTop = "8dp" />
+            <TextView
+                    android:text = "Date limite d'insciption : 11-09-2019"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content" android:id = "@+id/textView17"
+                    android:layout_marginTop = "8dp" app:layout_constraintTop_toTopOf = "parent"
+                    app:layout_constraintStart_toStartOf = "parent"
+                    android:layout_marginStart = "8dp" android:textSize = "12sp" android:textColor = "#FFFFFF"
+                    app:layout_constraintHorizontal_bias = "0.5" app:layout_constraintEnd_toStartOf = "@+id/button"
+                    app:layout_constraintHorizontal_chainStyle = "spread_inside" />
+            <Button
+                    android:text = "@string/insciprtion"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "20dp"
+                    android:id = "@+id/button" app:layout_constraintStart_toEndOf = "@+id/textView17"
+                    android:layout_marginStart = "12dp"
+                    app:layout_constraintTop_toTopOf = "@+id/textView17"
+                    app:layout_constraintBottom_toBottomOf = "@+id/textView17"
+                    app:layout_constraintEnd_toEndOf = "parent" android:layout_marginEnd = "8dp"
+                    android:background = "@drawable/bg_btn_consulter" android:textAllCaps = "false"
+                    android:textColor = "@color/white" android:textSize = "10sp"
+                    app:layout_constraintHorizontal_bias = "0.5" />
+            <TextView
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    app:layout_constraintStart_toStartOf = "parent" android:layout_marginStart = "16dp"
+                    android:id = "@+id/textView18" app:layout_constraintTop_toBottomOf = "@+id/imageView8"
+                    android:layout_marginTop = "16dp" android:text = "@string/description_title"
+                    android:textColor = "@color/textPrimary" />
+            <TextView
+                    android:text = "@string/lorem"
+                    android:layout_width = "0dp"
+                    android:layout_height = "wrap_content"
+                    android:id = "@+id/textView19"
+                    android:layout_marginTop = "8dp" app:layout_constraintTop_toBottomOf = "@+id/textView18"
+                    app:layout_constraintStart_toStartOf = "@+id/textView18"
+                    app:layout_constraintEnd_toEndOf = "parent" android:layout_marginEnd = "8dp"
+                    android:textColor = "@color/white" />
+            <android.support.v7.widget.RecyclerView
+                    android:layout_width = "0dp"
+                    android:layout_height = "100dp"
+                    android:layout_marginTop = "8dp"
+                    app:layout_constraintTop_toBottomOf = "@+id/textView20"
+                    app:layout_constraintStart_toStartOf = "@+id/textView20" app:layout_constraintEnd_toEndOf = "parent"
+                    android:layout_marginEnd = "8dp" android:id = "@+id/recyclerView"
+                    tools:listitem = "@layout/recycler_item_debouche" />
+            <Button
+                    android:text = "@string/hare_title"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "30dp"
+                    android:id = "@+id/button2"
+                    app:layout_constraintTop_toBottomOf = "@+id/imageView9" app:layout_constraintEnd_toEndOf = "parent"
+                    android:layout_marginEnd = "8dp" android:layout_marginTop = "8dp"
+                    android:background = "@drawable/bg_share_btn"
+                    android:textAllCaps = "false"
+                    android:textColor = "#fff"
+                    android:drawableLeft = "@drawable/ic_share_black_24dp"
+                    android:drawablePadding = "3dp"
+                    android:padding = "10dp"
+                    android:textSize = "10sp"
+                    app:layout_constraintBottom_toBottomOf = "parent" android:layout_marginBottom = "8dp" />
+        </android.support.constraint.ConstraintLayout>
+    
+        <!-- divider line -->
+    
+        <!-- dates part -->
+    
+        <!-- request button -->
+
+    </LinearLayout>
+
+</LinearLayout>

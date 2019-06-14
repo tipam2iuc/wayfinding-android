@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="min_width">380dp</dimen>
+    <dimen name="recycler_section_header_height">20dp</dimen>
+	<dimen name = "concour_vertical_margin">16dp</dimen>
+	<dimen name = "concour_vertical_margin">16dp</dimen>
 </resources>

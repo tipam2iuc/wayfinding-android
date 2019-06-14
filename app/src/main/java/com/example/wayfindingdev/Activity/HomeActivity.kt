@@ -14,6 +14,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.wayfindingdev.Fragment.DomaineFragment
 import com.example.wayfindingdev.Fragment.HomeFragment
+import com.example.wayfindingdev.Fragment.SchoolFragment
 import com.example.wayfindingdev.R
 import com.example.wayfindingdev.Tools.currentUser
 
@@ -51,26 +52,34 @@ class HomeActivity : AppCompatActivity() {
 
         val homeFragment = HomeFragment()
         val domaineFragment = DomaineFragment()
+        val schoolFragment = SchoolFragment()
 
         fragmentManager.beginTransaction().add(R.id.framelayout_hom, homeFragment, "1").show(homeFragment).commit()
         fragmentManager.beginTransaction().add(R.id.framelayout_hom, domaineFragment, "2").hide(domaineFragment).commit()
+        fragmentManager.beginTransaction().add(R.id.framelayout_hom, schoolFragment, "3").hide(schoolFragment).commit()
 
         actif = homeFragment
 
         OnNavigationItemReselectedListener =
             BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
-                when (menuItem.itemId) {
+                return@OnNavigationItemSelectedListener when (menuItem.itemId) {
                     R.id.menu_item_home -> {
                         fragmentManager.beginTransaction().hide(actif).show(homeFragment).commit()
                         actif = homeFragment
+                        true
                     }
                     R.id.menu_item_domaines ->{
                         fragmentManager.beginTransaction().hide(actif).show(domaineFragment).commit()
                         actif = domaineFragment
+                        true
                     }
+                    R.id.menu_item_Ecoles -> {
+                        fragmentManager.beginTransaction().hide(actif).show(schoolFragment).commit()
+                        actif = domaineFragment
+                        true
+                    }
+                    else -> true
                 }
-                Toast.makeText(this, "Test TTT", Toast.LENGTH_SHORT).show()
-                true
             }
         bottomNavigationView.setOnNavigationItemSelectedListener(OnNavigationItemReselectedListener)
 

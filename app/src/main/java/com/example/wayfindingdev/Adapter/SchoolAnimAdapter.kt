@@ -21,7 +21,6 @@ class SchoolAnimAdapter(val context:Context,val schoolsList: ArrayList<School>) 
     RecyclerView.Adapter<SchoolAnimAdapter.ViewHolder>(){
     private lateinit var gmap:GoogleMap
     class ViewHolder(itemView: View) :  RecyclerView.ViewHolder(itemView) {
-        val card:ConstraintLayout = itemView.findViewById(R.id.card_deroul)
 
         val schoolName2:TextView = itemView.findViewById(R.id.textView_school_item_school_name)
         val location2:TextView = itemView.findViewById(R.id.textView_item_school_location)

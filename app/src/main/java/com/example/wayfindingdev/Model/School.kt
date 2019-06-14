@@ -18,5 +18,5 @@ data class School(
     var latitude:String,@field:SerializedName("ville")
     var ville:String, @field:SerializedName("note")
     var note:Float, @field:SerializedName("intitule_type_ecole")
-    var intitule_type_ecole:String
+    var intitule_type_ecole:String, var viewType: Int = 20
 )
