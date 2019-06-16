@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.wayfindingdev.Model.Concour
 import com.example.wayfindingdev.R
 import com.ramotion.foldingcell.FoldingCell
@@ -81,6 +82,14 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
             viewHolder.foldingCell.toggle(false)
         }
 
+        Glide.
+            with(layoutInflater.context).
+            load(c.photo).
+            fallback(R.drawable.concour)
+            .error(R.drawable.concour)
+            .into(viewHolder.image)
+
+
 
 
     }
@@ -88,6 +97,7 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
     class ViewHolder(val view:View) : RecyclerView.ViewHolder(view) {
 
         val foldingCell:FoldingCell = view as FoldingCell
+
         /**
          * close()
          */
@@ -120,6 +130,8 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
 
         val btn_inscip:Button = content.btn_content_cell_inscription
         val btn_share = content.btn_content_cell_partage
+
+        val image = content.head_image
     }
 
     fun getString(int: Int):String = layoutInflater.context.resources.getString(int)

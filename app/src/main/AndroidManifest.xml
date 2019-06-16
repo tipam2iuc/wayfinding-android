@@ -24,9 +24,7 @@
 				<category android:name = "android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name = ".Activity.AnimRecycler">
 		
-		</activity>
 		<activity android:name = ".Register">
 		</activity>
 		<activity android:name = ".Activity.DetailDomaineActivity">
