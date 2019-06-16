@@ -64,6 +64,6 @@ dependencies {
     implementation 'com.ramotion.foldingcell:folding-cell:1.2.1'
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
 
-    //
-    implementation "com.amulyakhare:com.amulyakhare.textdrawable:1.0.1"
+    //image circulaire
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
 }
