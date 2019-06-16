@@ -18,7 +18,7 @@ import java.util.List;
 
 public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.ViewHolder> {
 
-    private Context      context;
+    private Context context;
     private List<School> schools;
 
     public SchoolAdapter(Context context, List<School> schools) {
@@ -41,8 +41,8 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Glide.with(context)
                 .load(schools.get(i).getChemin_logo())
-                .fallback(R.drawable.default_school)
-                .error(R.drawable.default_school)
+                .fallback(R.drawable.icons_university_48px)
+                .error(R.drawable.icons_university_48px)
                 .into(viewHolder.logo);
         viewHolder.nom.setText(schools.get(i).getNom_ecole());
         String location = schools.get(i).getQuartier() + " " + schools.get(i).getVille() + "- Cameroun";

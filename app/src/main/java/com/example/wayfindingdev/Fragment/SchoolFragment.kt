@@ -14,7 +14,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import com.example.wayfindingdev.Adapter.RecyclerSectionItemDecoration
-import com.example.wayfindingdev.Adapter.ShoolAdapterEnd
+import com.example.wayfindingdev.Adapter.ShoolAdapter
 import com.example.wayfindingdev.Model.School
 import com.example.wayfindingdev.Model.SchoolList
 import com.example.wayfindingdev.Network.GetDataService
@@ -99,12 +99,12 @@ class SchoolFragment : Fragment() {
 
         recycler.addItemDecoration((sectionItemDecoration))
 
-        recycler.adapter = ShoolAdapterEnd(this.layoutInflater,schools,R.layout.recycler_item_school)
+        recycler.adapter = ShoolAdapter(this.layoutInflater,schools,R.layout.recycler_item_school)
     }
 
     private fun setShool(schools: List<School>?) {
         this.schools = schools!!
-        this.schools.sortedBy { x->x.nom_ecole }
+        this.schools.sortedBy { x -> x.nom_ecole }
     }
 
     private fun showErrorMsg(message: String?,dialog:Dialog) {

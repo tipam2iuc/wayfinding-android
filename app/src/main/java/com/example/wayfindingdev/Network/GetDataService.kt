@@ -1,5 +1,6 @@
 package com.example.wayfindingdev.Network
 
+import com.example.wayfindingdev.Model.ConcourList
 import com.example.wayfindingdev.Model.DomaineList
 import com.example.wayfindingdev.Model.LoginResponse
 import com.example.wayfindingdev.Model.SchoolList
@@ -27,5 +28,11 @@ interface GetDataService {
     fun getAllDomaines(
         @Field("bb") dd: Int
     ): Call<DomaineList>
+
+    @FormUrlEncoded
+    @POST("Concours/getConcourAll.php")
+    fun getAllConcour(
+        @Field("bb") dd: Int=10
+    ): Call<ConcourList>
 
 }

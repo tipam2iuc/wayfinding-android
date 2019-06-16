@@ -28,7 +28,7 @@ class RecyclerSectionItemDecoration(val headerHeight:Int, val sticky:Boolean, va
         if(headerView == null){
             headerView = inflateHeaderView(parent)
             header = headerView!!.findViewById(R.id.txt_group_title)
-            //fixLayoutSize(headerView!!,parent)
+            fixLayoutSize(headerView!!,parent)
         }
 
         var previousHeader: CharSequence = ""
@@ -68,39 +68,39 @@ class RecyclerSectionItemDecoration(val headerHeight:Int, val sticky:Boolean, va
             )
     }
 
-//    private fun fixLayoutSize(view: View, parent: ViewGroup) {
-//        val widthSpec = View.MeasureSpec.makeMeasureSpec(
-//            parent.width,
-//            View.MeasureSpec.EXACTLY
-//        )
-//        val heightSpec = View.MeasureSpec.makeMeasureSpec(
-//            parent.height,
-//            View.MeasureSpec.UNSPECIFIED
-//        )
-//
-//        val childWidth = ViewGroup.getChildMeasureSpec(
-//            widthSpec,
-//            parent.paddingLeft + parent.paddingRight,
-//            view.layoutParams.width
-//        )
-//        val childHeight = ViewGroup.getChildMeasureSpec(
-//            heightSpec,
-//            parent.paddingTop + parent.paddingBottom,
-//            view.layoutParams.height
-//        )
-//
-//        view.measure(
-//            childWidth,
-//            childHeight
-//        )
-//
-//        view.layout(
-//            0,
-//            0,
-//            view.measuredWidth,
-//            view.measuredHeight
-//        )
-//    }
+    private fun fixLayoutSize(view: View, parent: ViewGroup) {
+        val widthSpec = View.MeasureSpec.makeMeasureSpec(
+            parent.width,
+            View.MeasureSpec.EXACTLY
+        )
+        val heightSpec = View.MeasureSpec.makeMeasureSpec(
+            parent.height,
+            View.MeasureSpec.UNSPECIFIED
+        )
+
+        val childWidth = ViewGroup.getChildMeasureSpec(
+            widthSpec,
+            parent.paddingLeft + parent.paddingRight,
+            view.layoutParams.width
+        )
+        val childHeight = ViewGroup.getChildMeasureSpec(
+            heightSpec,
+            parent.paddingTop + parent.paddingBottom,
+            view.layoutParams.height
+        )
+
+        view.measure(
+            childWidth,
+            childHeight
+        )
+
+        view.layout(
+            0,
+            0,
+            view.measuredWidth,
+            view.measuredHeight
+        )
+    }
 
     private fun drawHeader(c: Canvas, child: View, headerView: View) {
         c.save()

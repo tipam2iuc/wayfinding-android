@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.example.wayfindingdev.Fragment.ConcourFragment
 import com.example.wayfindingdev.Fragment.DomaineFragment
 import com.example.wayfindingdev.Fragment.HomeFragment
 import com.example.wayfindingdev.Fragment.SchoolFragment
@@ -37,11 +38,13 @@ class HomeActivity : AppCompatActivity() {
         bottomNavigationView = findViewById(R.id.bottomNavigationView_home)
         imageView = findViewById(R.id.profile_image)
 
-        val userPic:String = currentUser?.chemin_photo_profil_utilisateur!!
+        val userPic:String? = currentUser?.chemin_photo_profil_utilisateur
 
-        Glide.with(this)
-            .load(userPic)
-            .into(imageView)
+        if(userPic != null){
+            Glide.with(this)
+                .load(userPic)
+                .into(imageView)
+        }
 
 
 
@@ -53,10 +56,12 @@ class HomeActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
         val domaineFragment = DomaineFragment()
         val schoolFragment = SchoolFragment()
+        val concourFragment = ConcourFragment()
 
         fragmentManager.beginTransaction().add(R.id.framelayout_hom, homeFragment, "1").show(homeFragment).commit()
         fragmentManager.beginTransaction().add(R.id.framelayout_hom, domaineFragment, "2").hide(domaineFragment).commit()
         fragmentManager.beginTransaction().add(R.id.framelayout_hom, schoolFragment, "3").hide(schoolFragment).commit()
+        fragmentManager.beginTransaction().add(R.id.framelayout_hom, concourFragment, "4").hide(concourFragment).commit()
 
         actif = homeFragment
 
@@ -75,7 +80,12 @@ class HomeActivity : AppCompatActivity() {
                     }
                     R.id.menu_item_Ecoles -> {
                         fragmentManager.beginTransaction().hide(actif).show(schoolFragment).commit()
-                        actif = domaineFragment
+                        actif = schoolFragment
+                        true
+                    }
+                    R.id.menu_item_Concours -> {
+                        fragmentManager.beginTransaction().hide(actif).show(concourFragment).commit()
+                        actif = concourFragment
                         true
                     }
                     else -> true
@@ -94,7 +104,7 @@ class HomeActivity : AppCompatActivity() {
         if (message != null) {
             msgText.text = message
         }else{
-            msgText.text = "Erreur inconnue !"
+            msgText.text = resources.getString(R.string.errorText)
         }
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()

@@ -78,6 +78,9 @@
 	<string name = "description_title">Description</string>
 	<string name = "documentrequis_title">Document requis</string>
 	<string name = "hare_title">Partager</string>
+	<string name = "niveau">Niveau : BAC+</string>
+	<string name = "cmnum">+237</string>
+	<string name = "organise">Organisé par :</string>
 
 
 </resources>

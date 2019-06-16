@@ -4,7 +4,8 @@
              android:layout_width = "match_parent"
              android:layout_height = "match_parent"
              tools:context = ".Fragment.ConcourFragment" android:background = "#00C0BFBF">
-	<ListView android:layout_width = "match_parent"
+	<android.support.v7.widget.RecyclerView android:layout_width = "match_parent"
+	          android:id="@+id/list_concour_fragment"
 	          android:layout_height = "match_parent"
 	          android:clipChildren = "false"
 	          android:clipToPadding = "false"
@@ -19,6 +20,6 @@
 	          tools:listitem = "@layout/cell"
 	>
 	
-	</ListView>
+	</android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

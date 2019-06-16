@@ -13,14 +13,14 @@ import com.bumptech.glide.Glide
 import com.example.wayfindingdev.Model.School
 import com.example.wayfindingdev.R
 import com.ramotion.foldingcell.FoldingCell
+import kotlinx.android.synthetic.main.recycler_item_school.view.*
 import kotlinx.android.synthetic.main.recyclerview_item_school_detail_deroul.view.*
-import java.text.FieldPosition
 
-class ShoolAdapterEnd (private val layoutInflater: LayoutInflater,private val schools:List<School>,@LayoutRes private val rowLayout:Int):
-    RecyclerView.Adapter<ShoolAdapterEnd.ViewHolder>()
+class ShoolAdapter (private val layoutInflater: LayoutInflater, private val schools:List<School>, @LayoutRes private val rowLayout:Int):
+    RecyclerView.Adapter<ShoolAdapter.ViewHolder>()
 {
 
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ShoolAdapterEnd.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ShoolAdapter.ViewHolder {
         val v = layoutInflater.inflate(rowLayout,parent,false)
         return ViewHolder(v)
     }
@@ -28,7 +28,7 @@ class ShoolAdapterEnd (private val layoutInflater: LayoutInflater,private val sc
 
     override fun getItemCount() = schools.size
 
-    override fun onBindViewHolder(viewHolder: ShoolAdapterEnd.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ShoolAdapter.ViewHolder, position: Int) {
         val item = schools[position]
         viewHolder.schoolName.text = item.nom_ecole
         viewHolder.location.text = "${item.quartier}-${item.ville}-Cameroun"
@@ -61,11 +61,12 @@ class ShoolAdapterEnd (private val layoutInflater: LayoutInflater,private val sc
         viewHolder.type.text = item.intitule_type_ecole
         viewHolder.creation.text = "23 mai 2019"
         viewHolder.description.text = item.presentation_ecole
-        viewHolder.folidingCell.setOnClickListener{
-            viewHolder.folidingCell.toggle(false)
-        }
         viewHolder.note.progress = (item.note * 300f / 20f).toInt()
         viewHolder.note2.progress = (item.note * 300f / 20f).toInt()
+
+        viewHolder.folding_cell_school.setOnClickListener {
+            viewHolder.folding_cell_school.toggle(false)
+        }
     }
 
 
@@ -90,8 +91,9 @@ class ShoolAdapterEnd (private val layoutInflater: LayoutInflater,private val sc
         val creation:TextView = itemView.findViewById(R.id.textView_item_school_creation_date)
         val description:TextView = itemView.findViewById(R.id.textView_item_school_description)
         val btnConsulter: Button = itemView.findViewById(R.id.button_item_school_consulter)
-        val folidingCell: FoldingCell = itemView.findViewById(R.id.folding_cell_school)
         val couverture = itemView.imageView_item_couverture_school
+
+        val folding_cell_school = view.folding_cell_school
 
     }
 

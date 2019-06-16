@@ -4,8 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.example.wayfindingdev.Adapter.RecyclerSectionItemDecoration
-import com.example.wayfindingdev.Adapter.SchoolAdapter
-import com.example.wayfindingdev.Adapter.ShoolAdapterEnd
+import com.example.wayfindingdev.Adapter.ShoolAdapter
 import com.example.wayfindingdev.Common.Common
 import com.example.wayfindingdev.Model.School
 import com.example.wayfindingdev.R
@@ -25,7 +24,7 @@ class AnimRecycler : AppCompatActivity() {
         val sectionItemDecoration = RecyclerSectionItemDecoration(getResources().getDimensionPixelSize(R.dimen.recycler_section_header_height),sticky=true,sectionCallback=getSectionCallback(schools))
         recycler_test.addItemDecoration((sectionItemDecoration))
 
-        recycler_test.adapter = ShoolAdapterEnd(this.layoutInflater,schools,R.layout.recycler_item_school)
+        recycler_test.adapter = ShoolAdapter(this.layoutInflater,schools,R.layout.recycler_item_school)
 
 
     }
