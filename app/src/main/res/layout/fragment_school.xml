@@ -3,12 +3,12 @@
              xmlns:tools = "http://schemas.android.com/tools"
              android:layout_width = "match_parent"
              android:layout_height = "match_parent"
-             tools:context = ".Fragment.SchoolFragment">
+             tools:context = ".Fragment.SchoolFragment" android:background = "#CDFAF7FF">
 	<android.support.v7.widget.RecyclerView
 			android:layout_width = "match_parent"
 			android:layout_height = "match_parent"
 			android:id = "@+id/recycler_school_fragement"
-			android:scrollbars="vertical"
+			android:scrollbars = "vertical"
 			
 			android:clipChildren = "false"
 			android:clipToPadding = "false"
@@ -19,7 +19,7 @@
 			android:paddingLeft = "@dimen/concour_vertical_margin"
 			android:paddingRight = "@dimen/concour_vertical_margin"
 			android:paddingTop = "@dimen/concour_vertical_margin"
-			tools:listitem="@layout/cell_school"
+			tools:listitem = "@layout/cell_school"
 	
 	/>
 </FrameLayout>

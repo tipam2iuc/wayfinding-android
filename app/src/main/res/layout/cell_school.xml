@@ -4,9 +4,10 @@
                                       xmlns:folding-cell = "http://schemas.android.com/apk/res-auto"
                                       android:layout_width = "match_parent"
                                       android:layout_height = "wrap_content"
-                                      folding-cell:additionalFlipsCount = "2"
+                                      
                                       folding-cell:animationDuration = "1300"
                                       folding-cell:backSideColor = "@color/bgBackSideColor"
+                                      android:id="@+id/folding_cell_school"
                                       folding-cell:cameraHeight = "30" android:layout_marginBottom = "5dp">
     
     <!-- CONTENT (UNFOLDED) LAYOUT (MUST BE AT LEAST 2x times BIGGER than content layout bellow)-->

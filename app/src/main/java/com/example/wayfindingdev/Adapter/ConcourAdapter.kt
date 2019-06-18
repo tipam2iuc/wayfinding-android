@@ -37,8 +37,7 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
         viewHolder.name2.text = c.intitule
         viewHolder.niveau.text = getString(R.string.niveau) + c.niveau?.toString()
         viewHolder.ecole.text = getString(R.string.organise)+ if(c.ecole != null) c.ecole else "inconnue"
-        viewHolder.tel.text = c.number?.toString()
-        viewHolder.email.text = c.email?.toString()
+        viewHolder.campus.text = c.campus?.toString()+" XAF"
 
 
 
@@ -104,8 +103,7 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
         val names:TextView = view.findViewById(R.id.text_view_concour_name2)
         val niveau:TextView = view.findViewById(R.id.text_view_concour_niveau2)
         val ecole:TextView = view.findViewById(R.id.text_view_concour_school2)
-        val tel:TextView = view.findViewById(R.id.text_view_concour_tel2)
-        val email:TextView = view.findViewById(R.id.text_view_concour_email2)
+        val cmpus:TextView = view.findViewById(R.id.text_view_concour_campus2)
         val day:TextView = view.findViewById(R.id.text_view_concour_day2)
         val monthYear:TextView = view.findViewById(R.id.text_view_concour_monthyear2)
 
