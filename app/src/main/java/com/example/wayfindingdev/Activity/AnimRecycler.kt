@@ -3,50 +3,49 @@ package com.example.wayfindingdev.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.view.View
-import com.example.wayfindingdev.Adapter.SchoolAnimAdapter
+import com.example.wayfindingdev.Adapter.RecyclerSectionItemDecoration
+import com.example.wayfindingdev.Adapter.ShoolAdapter
+import com.example.wayfindingdev.Common.Common
 import com.example.wayfindingdev.Model.School
 import com.example.wayfindingdev.R
-import com.ramotion.foldingcell.FoldingCell
-import java.util.ArrayList
+import kotlinx.android.synthetic.main.activity_anim_recycler.*
+import java.util.*
 
 class AnimRecycler : AppCompatActivity() {
-
+    internal var schools = ArrayList<School>()
+    internal lateinit var layoutManager: LinearLayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anim_recycler)
 
-        val recyclerView:RecyclerView = findViewById(R.id.recycler_test)
+        recycler_test.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        val schools = getSchool()
 
-        val scholls:ArrayList<School> = ArrayList()
-        scholls.add(School(1,"IUC","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
-            ,"any","any","any","Logbessou","100","mlml","66666","1.222","1.22"
-        ,"Douala",14.5f,"Etat"
-        ))
-        scholls.add(School(1,"IUC","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
-            ,"any","any","any","Logbessou","100","mlml","66666","1.222","1.22"
-        ,"Douala",14.5f,"Etat"
-        ))
-        scholls.add(School(1,"IUC","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
-            ,"any","any","any","Logbessou","100","mlml","66666","1.222","1.22"
-        ,"Douala",14.5f,"Etat"
-        ))
-        scholls.add(School(1,"IUC","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
-            ,"any","any","any","Logbessou","100","mlml","66666","1.222","1.22"
-        ,"Douala",14.5f,"Etat"
-        ))
-        scholls.add(School(1,"IUC","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
-            ,"any","any","any","Logbessou","100","mlml","66666","1.222","1.22"
-        ,"Douala",14.5f,"Etat"
-        ))
-        scholls.add(School(1,"IUC","KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
-            ,"any","any","any","Logbessou","100","mlml","66666","1.222","1.22"
-        ,"Douala",14.5f,"Etat"
-        ))
+        val sectionItemDecoration = RecyclerSectionItemDecoration(getResources().getDimensionPixelSize(R.dimen.recycler_section_header_height),sticky=true,sectionCallback=getSectionCallback(schools))
+        recycler_test.addItemDecoration((sectionItemDecoration))
 
-        val schoolAnimRecycler:SchoolAnimAdapter = SchoolAnimAdapter(this,scholls)
-        recyclerView.adapter = schoolAnimRecycler
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recycler_test.adapter = ShoolAdapter(this.layoutInflater,schools,R.layout.recycler_item_school)
+
+
     }
+
+    private fun getSectionCallback(schools: List<School>): RecyclerSectionItemDecoration.SectionCallback {
+        return object : RecyclerSectionItemDecoration.SectionCallback {
+            override fun isSection(position: Int): Boolean {
+                return position == 0 || schools[position].nom_ecole[0] != schools[position - 1].nom_ecole[0]
+            }
+
+            override fun getSectionHeader(position: Int): CharSequence {
+                return schools[position].nom_ecole.subSequence(0,1)
+            }
+        }
+    }
+
+    private fun getSchool() : List<School> {
+        val school:List<School> = Common.genSchoolGroup()
+        val l = school.sortedBy { x->x.nom_ecole }
+        return l
+    }
+
+
 }

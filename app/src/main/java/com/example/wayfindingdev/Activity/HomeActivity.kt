@@ -19,8 +19,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.example.wayfindingdev.Fragment.ConcourFragment
 import com.example.wayfindingdev.Fragment.DomaineFragment
 import com.example.wayfindingdev.Fragment.HomeFragment
+import com.example.wayfindingdev.Fragment.SchoolFragment
 import com.example.wayfindingdev.R
 import com.example.wayfindingdev.R.id.toolbar
 import com.example.wayfindingdev.Tools.currentUser
@@ -55,11 +57,13 @@ class HomeActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         bottomNavigationView = findViewById(R.id.bottomNavigationView_home)
         imageView = findViewById(R.id.profile_image)
 
-        val userPic:String = currentUser?.chemin_photo_profil_utilisateur!!
+        val userPic:String? = currentUser?.chemin_photo_profil_utilisateur
 
-        Glide.with(this)
-            .load(userPic)
-            .into(imageView)
+        if(userPic != null){
+            Glide.with(this)
+                .load(userPic)
+                .into(imageView)
+        }
 
 
 
@@ -70,26 +74,41 @@ class HomeActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
         val homeFragment = HomeFragment()
         val domaineFragment = DomaineFragment()
+        val schoolFragment = SchoolFragment()
+        val concourFragment = ConcourFragment()
 
         fragmentManager.beginTransaction().add(R.id.framelayout_hom, homeFragment, "1").show(homeFragment).commit()
         fragmentManager.beginTransaction().add(R.id.framelayout_hom, domaineFragment, "2").hide(domaineFragment).commit()
+        fragmentManager.beginTransaction().add(R.id.framelayout_hom, schoolFragment, "3").hide(schoolFragment).commit()
+        fragmentManager.beginTransaction().add(R.id.framelayout_hom, concourFragment, "4").hide(concourFragment).commit()
 
         actif = homeFragment
 
         OnNavigationItemReselectedListener =
             BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
-                when (menuItem.itemId) {
+                return@OnNavigationItemSelectedListener when (menuItem.itemId) {
                     R.id.menu_item_home -> {
                         fragmentManager.beginTransaction().hide(actif).show(homeFragment).commit()
                         actif = homeFragment
+                        true
                     }
                     R.id.menu_item_domaines ->{
                         fragmentManager.beginTransaction().hide(actif).show(domaineFragment).commit()
                         actif = domaineFragment
+                        true
                     }
+                    R.id.menu_item_Ecoles -> {
+                        fragmentManager.beginTransaction().hide(actif).show(schoolFragment).commit()
+                        actif = schoolFragment
+                        true
+                    }
+                    R.id.menu_item_Concours -> {
+                        fragmentManager.beginTransaction().hide(actif).show(concourFragment).commit()
+                        actif = concourFragment
+                        true
+                    }
+                    else -> true
                 }
-                Toast.makeText(this, "Test TTT", Toast.LENGTH_SHORT).show()
-                true
             }
         bottomNavigationView.setOnNavigationItemSelectedListener(OnNavigationItemReselectedListener)
 
@@ -104,7 +123,7 @@ class HomeActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         if (message != null) {
             msgText.text = message
         }else{
-            msgText.text = "Erreur inconnue !"
+            msgText.text = resources.getString(R.string.errorText)
         }
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()

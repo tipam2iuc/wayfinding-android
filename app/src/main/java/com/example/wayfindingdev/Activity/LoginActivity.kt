@@ -64,8 +64,7 @@ class LoginActivity : AppCompatActivity() {
         val call = dataService.Login(email.trim(), password.trim())
         call.enqueue(object:Callback<LoginResponse>{
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Toast.makeText(applicationContext,t.message,Toast.LENGTH_LONG).show()
-                showErrorMsg(t.message)
+                showErrorMsg("Ouuups problem de connexion au serveur veuillez essayer plus tard!!")
             }
 
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
