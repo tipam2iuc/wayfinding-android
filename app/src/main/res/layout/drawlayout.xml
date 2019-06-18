@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+		xmlns:android = "http://schemas.android.com/apk/res/android"
+		android:layout_width = "match_parent"
+		android:background="@color/colorPrimary"
+		android:layout_height = "match_parent" xmlns:app = "http://schemas.android.com/apk/res-auto">
+	
+     <android.support.design.widget.NavigationView
+		     android:layout_width = "wrap_content"
+		     android:layout_height = "wrap_content"
+		     android:background="@color/colorPrimary"
+		     app:itemTextColor ="#AD7CB6"
+		     app:itemIconTint="#AD7CB6"
+		     app:menu="@menu/items_drawerlayout"
+		     android:id="@+id/nav_view"
+     >
+	    
+	     
+	     
+     </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>

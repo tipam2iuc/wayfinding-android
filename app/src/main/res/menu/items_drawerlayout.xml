@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android = "http://schemas.android.com/apk/res/android"
+>
+		<group android:id="@+id/group1">
+			<item
+					android:id="@+id/test"
+					android:icon="@drawable/orientation"
+					android:title="Test D'orientation" />
+			<item
+					android:id="@+id/preferences"
+					android:icon="@drawable/star"
+					android:title="Preferences" />
+			<item
+					android:id="@+id/parametres"
+					android:icon="@drawable/settings"
+					android:title="Paramètres" />
+			<item
+					android:id="@+id/notifications"
+					android:icon="@drawable/notification"
+					android:title="Notifications" />
+		</group>
+	
+		<group android:id="@+id/group2">
+			<item
+					android:id="@+id/changement_de_compte"
+					android:icon="@drawable/change"
+					android:title="Changement de Compte" />
+			<item
+					android:id="@+id/deconnexion"
+					android:icon="@drawable/logout"
+					android:title="Deconnexion" />
+	
+		</group>
+	<group android:id="@+id/group3">
+		<item
+				android:id="@+id/inviter"
+				android:icon="@drawable/forward"
+				android:title="Inviter un(e) ami(e)" />
+		<item
+				android:id="@+id/apropos"
+				android:icon="@drawable/info"
+				android:title="A propos de Wayfinding" />
+		<item
+				android:id="@+id/faq"
+				android:icon="@drawable/help"
+				android:title="FAQ" />
+	
+	
+	</group>
+</menu>
