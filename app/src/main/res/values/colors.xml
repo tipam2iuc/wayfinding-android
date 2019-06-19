@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#340649</color>
     <color name="colorAccent">#D81B60</color>
     <color name="conn_bg">#E645145D</color>
-    <color name="white">#fff</color>
+    <color name="white">#ffff</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="cart_bg_color_search">#A2A1A1</color>
     <color name="theme_orange">#4489FF</color>

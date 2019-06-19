@@ -149,7 +149,7 @@
 						app:layout_constraintEnd_toEndOf = "parent"
 						app:layout_constraintStart_toStartOf = "parent"
 						app:layout_constraintTop_toTopOf = "parent"
-						tools:ignore = "UnusedAttribute" />
+						tools:ignore = "UnusedAttribute" android:text = "admin" />
 				
 				<EditText
 						android:id = "@+id/editText_password_con"
@@ -173,7 +173,7 @@
 						app:layout_constraintHorizontal_bias = "0.0"
 						app:layout_constraintStart_toStartOf = "parent"
 						app:layout_constraintTop_toBottomOf = "@+id/editText_email_con"
-						tools:ignore = "UnusedAttribute" />
+						tools:ignore = "UnusedAttribute" android:text = "admin" />
 				
 				<Button
 						android:id = "@+id/button_connexion"

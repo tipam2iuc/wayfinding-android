@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android = "http://schemas.android.com/apk/res/android"
-          package = "com.example.wayfindingdev">
+          xmlns:tools = "http://schemas.android.com/tools" package = "com.example.wayfindingdev">
 	
 	<uses-permission android:name = "android.permission.INTERNET" />
 	
@@ -10,17 +10,15 @@
 			android:label = "@string/app_name"
 			android:roundIcon = "@mipmap/ic_launcher_round"
 			android:supportsRtl = "true"
-			android:theme = "@style/AppTheme">
-		<activity android:name = ".Activity.AnimRecycler"/>
-		
+			android:theme = "@style/AppTheme" tools:ignore = "GoogleAppIndexingWarning">
 		<activity android:name = ".Activity.Slider3">
 		</activity>
 		<activity android:name = ".Activity.Slider2">
 		</activity>
-		<activity android:name = ".Activity.Slider1">
-		
+		<activity android:name = ".Activity.Slider1">		
 		</activity>
-		
+		<activity android:name = ".Activity.AnimRecycler">		
+		</activity>
 		<activity android:name = ".Register">
 		</activity>
 		<activity android:name = ".Activity.DetailDomaineActivity">
@@ -33,7 +31,6 @@
 			</intent-filter>
 		</activity>
 		<activity android:name = ".Activity.LoginActivity">
-		
 		</activity>
 		<activity android:name = ".MainActivity" />
 	</application>
