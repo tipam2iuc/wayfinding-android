@@ -23,7 +23,7 @@
     
         <TextView
                 android:id = "@+id/text_view_concour_monthyear2"
-                android:layout_width = "0dp"
+                android:layout_width = "64dp"
                 android:layout_height = "wrap_content"
                 android:layout_alignParentLeft = "true"
                 android:layout_alignParentStart = "true"
@@ -31,19 +31,16 @@
                 android:textSize = "14sp"
                 android:text = "06-2018"
 
-                android:layout_marginTop = "8dp"
-                app:layout_constraintTop_toBottomOf = "@+id/title_from_to_dots_divider3"
-                android:layout_marginBottom = "8dp"
-                app:layout_constraintBottom_toBottomOf = "parent" android:layout_marginStart = "8dp"
-                app:layout_constraintStart_toStartOf = "parent" android:layout_marginEnd = "8dp"
-                app:layout_constraintEnd_toEndOf = "parent" android:textAlignment = "center" />
+                android:textAlignment = "center"
+                app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_day2"
+                app:layout_constraintStart_toStartOf = "parent"
+                app:layout_constraintEnd_toEndOf = "parent" />
         <ImageView
                 android:id = "@+id/title_from_to_dots_divider3"
                 android:layout_width = "match_parent"
                 android:layout_height = "1dp"
                 android:src = "@color/contentDividerLine"
-                app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_day2"
-                app:layout_constraintBottom_toTopOf = "@+id/text_view_concour_monthyear2" />
+                app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_monthyear2" />
         <TextView
                 android:id = "@+id/text_view_concour_day2"
                 android:layout_width = "wrap_content"
@@ -51,15 +48,24 @@
                 android:layout_alignParentLeft = "true"
                 android:layout_alignParentStart = "true"
                 android:textColor = "@android:color/white"
-                android:textSize = "26sp"
+                android:textSize = "36sp"
                 android:text = "25"
 
-                android:layout_marginTop = "8dp"
-                app:layout_constraintTop_toTopOf = "parent" android:layout_marginStart = "8dp"
-                app:layout_constraintStart_toStartOf = "parent" android:layout_marginEnd = "8dp"
-                app:layout_constraintEnd_toEndOf = "parent" app:layout_constraintHorizontal_bias = "0.5"
-                app:layout_constraintBottom_toTopOf = "@+id/title_from_to_dots_divider3"
-                app:layout_constraintVertical_chainStyle = "packed" />
+                android:textStyle = "bold"
+                android:layout_marginStart = "8dp" app:layout_constraintStart_toStartOf = "parent"
+                android:layout_marginEnd = "8dp" app:layout_constraintEnd_toEndOf = "parent" />
+	    <TextView
+			    android:text = "10 000 XAF"
+			    android:layout_width = "0dp"
+			    android:layout_height = "wrap_content"
+			    android:id = "@+id/text_view_concour_price2"
+			    app:layout_constraintTop_toBottomOf = "@+id/title_from_to_dots_divider3"
+			    app:layout_constraintBottom_toBottomOf = "parent"
+			    app:layout_constraintStart_toStartOf = "parent"
+			    app:layout_constraintEnd_toEndOf = "parent" android:textSize = "10sp"
+			    android:shadowColor = "#FFFFFF" android:textColor = "#FFFFFF"
+			    android:drawableLeft = "@drawable/ic_monetization_on_black_24dp" android:layout_marginTop = "1dp"
+			    android:drawablePadding = "2dp" />
 
 
     </android.support.constraint.ConstraintLayout>
@@ -72,7 +78,7 @@
             android:paddingLeft = "10dp"
             android:paddingRight = "20dp"
             android:paddingStart = "10dp"
-            android:paddingTop = "10dp" app:layout_constraintBottom_toBottomOf = "parent"
+            android:paddingTop = "3dp" app:layout_constraintBottom_toBottomOf = "parent"
             android:id = "@+id/constraintLayout2" app:layout_constraintStart_toEndOf = "@+id/constraintLayout3"
             app:layout_constraintHorizontal_bias = "0.5" app:layout_constraintEnd_toEndOf = "parent"
             app:layout_constraintTop_toTopOf = "parent">
@@ -83,11 +89,11 @@
                 android:layout_height = "wrap_content"
                 android:ellipsize = "marquee"
                 android:fadingEdge = "horizontal"
-                android:singleLine = "true"
+                android:singleLine = "false"
                 android:textColor = "@android:color/black"
-                android:textSize = "18sp" tools:text = "Réseau et sécurité"
+                android:textSize = "16sp" tools:text = "Réseau et sécurité"
                 app:layout_constraintTop_toTopOf = "parent" app:layout_constraintStart_toStartOf = "parent"
-                app:layout_constraintEnd_toEndOf = "parent" />
+                app:layout_constraintEnd_toEndOf = "parent" android:textStyle = "bold" />
         <ImageView
                 android:id = "@+id/title_from_to_dots_divider"
                 android:layout_width = "0dp"
@@ -105,7 +111,7 @@
                 android:id = "@+id/text_view_concour_niveau2"
                 app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_name2"
                 app:layout_constraintStart_toStartOf = "@+id/text_view_concour_name2"
-                app:layout_constraintEnd_toEndOf = "@+id/text_view_concour_name2" />
+                app:layout_constraintEnd_toEndOf = "@+id/text_view_concour_name2" android:textSize = "12sp" />
         <TextView
                 android:text = "Organisé par : Institut universitaire de la côte"
                 android:layout_width = "0dp"
@@ -113,34 +119,22 @@
                 android:id = "@+id/text_view_concour_school2"
                 app:layout_constraintTop_toBottomOf = "@+id/text_view_concour_niveau2"
                 app:layout_constraintStart_toStartOf = "@+id/text_view_concour_niveau2"
-                app:layout_constraintEnd_toEndOf = "@+id/text_view_concour_niveau2" android:layout_marginTop = "2dp" />
+                app:layout_constraintEnd_toEndOf = "@+id/text_view_concour_niveau2" android:layout_marginTop = "2dp"
+                android:textSize = "12sp" />
         <TextView
-                android:text = "+237 690981056"
+                android:text = "Campus de Logbessou"
                 android:layout_width = "0dp"
                 android:layout_height = "wrap_content"
                 app:layout_constraintBottom_toBottomOf = "parent"
-                android:id = "@+id/text_view_concour_tel2"
+                android:id = "@+id/text_view_concour_campus2"
                 app:layout_constraintTop_toBottomOf = "@+id/title_from_to_dots_divider"
                 app:layout_constraintStart_toStartOf = "@+id/title_from_to_dots_divider"
                 android:layout_marginTop = "8dp"
-                app:layout_constraintHorizontal_bias = "0.5"
-                app:layout_constraintEnd_toStartOf = "@+id/text_view_concour_email2"
                 app:layout_constraintHorizontal_chainStyle = "spread_inside"
-                android:drawableLeft = "@drawable/ic_local_phone_black_24dp" android:drawablePadding = "3dp"
-                android:layout_marginBottom = "8dp" android:textSize = "10sp" />
-        <TextView
-                android:text = "mevaajules2@gmail.com"
-                android:layout_width = "0dp"
-                android:layout_height = "wrap_content"
-                android:id = "@+id/text_view_concour_email2"
+                android:drawableLeft = "@drawable/ic_location_campus" android:drawablePadding = "3dp"
+                android:layout_marginBottom = "8dp" android:textSize = "10sp"
                 app:layout_constraintEnd_toEndOf = "@+id/title_from_to_dots_divider"
-                app:layout_constraintBottom_toBottomOf = "@+id/text_view_concour_tel2"
-                app:layout_constraintTop_toTopOf = "@+id/text_view_concour_tel2"
-                app:layout_constraintStart_toEndOf = "@+id/text_view_concour_tel2"
-                app:layout_constraintHorizontal_bias = "0.5"
-                android:layout_marginStart = "16dp"
-                android:drawableLeft = "@drawable/ic_mail_black_24dp" android:drawablePadding = "3dp"
-                android:textSize = "10sp" />
+                android:textColor = "#0E88FF" />
 
 
     </android.support.constraint.ConstraintLayout>

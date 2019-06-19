@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.wayfindingdev.Model.Concour
 import com.example.wayfindingdev.R
 import com.ramotion.foldingcell.FoldingCell
@@ -36,8 +37,7 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
         viewHolder.name2.text = c.intitule
         viewHolder.niveau.text = getString(R.string.niveau) + c.niveau?.toString()
         viewHolder.ecole.text = getString(R.string.organise)+ if(c.ecole != null) c.ecole else "inconnue"
-        viewHolder.tel.text = c.number?.toString()
-        viewHolder.email.text = c.email?.toString()
+        viewHolder.campus.text = c.campus?.toString()+" XAF"
 
 
 
@@ -81,6 +81,14 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
             viewHolder.foldingCell.toggle(false)
         }
 
+        Glide.
+            with(layoutInflater.context).
+            load(c.photo).
+            fallback(R.drawable.concour)
+            .error(R.drawable.concour)
+            .into(viewHolder.image)
+
+
 
 
     }
@@ -88,14 +96,14 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
     class ViewHolder(val view:View) : RecyclerView.ViewHolder(view) {
 
         val foldingCell:FoldingCell = view as FoldingCell
+
         /**
          * close()
          */
         val names:TextView = view.findViewById(R.id.text_view_concour_name2)
         val niveau:TextView = view.findViewById(R.id.text_view_concour_niveau2)
         val ecole:TextView = view.findViewById(R.id.text_view_concour_school2)
-        val tel:TextView = view.findViewById(R.id.text_view_concour_tel2)
-        val email:TextView = view.findViewById(R.id.text_view_concour_email2)
+        val cmpus:TextView = view.findViewById(R.id.text_view_concour_campus2)
         val day:TextView = view.findViewById(R.id.text_view_concour_day2)
         val monthYear:TextView = view.findViewById(R.id.text_view_concour_monthyear2)
 
@@ -120,6 +128,8 @@ class ConcourAdapter(private val layoutInflater: LayoutInflater,private val conc
 
         val btn_inscip:Button = content.btn_content_cell_inscription
         val btn_share = content.btn_content_cell_partage
+
+        val image = content.head_image
     }
 
     fun getString(int: Int):String = layoutInflater.context.resources.getString(int)

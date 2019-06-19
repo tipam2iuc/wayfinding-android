@@ -64,7 +64,7 @@
 	<string name = "sender_badge" translatable = "false">SENDER</string>
 	<string name = "client_name_mock" translatable = "false">Edward Norton</string>
 	<string name = "rating_mock" translatable = "false">(26)</string>
-	<color name = "contentDividerLine">#e0e0e0</color>
+	<color name = "contentDividerLine">#F0F0EDED</color>
 	<string name = "from_badge" translatable = "false">FROM</string>
 	<string name = "to_badge" translatable = "false">TO</string>
 	<string name = "delivery_date_badge" translatable = "false">DELIVERY DATE</string>

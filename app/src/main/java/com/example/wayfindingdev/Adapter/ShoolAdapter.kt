@@ -12,9 +12,8 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.wayfindingdev.Model.School
 import com.example.wayfindingdev.R
-import com.ramotion.foldingcell.FoldingCell
-import kotlinx.android.synthetic.main.recycler_item_school.view.*
-import kotlinx.android.synthetic.main.recyclerview_item_school_detail_deroul.view.*
+import kotlinx.android.synthetic.main.cell_content_school_layout.view.*
+import kotlinx.android.synthetic.main.cell_school.view.*
 
 class ShoolAdapter (private val layoutInflater: LayoutInflater, private val schools:List<School>, @LayoutRes private val rowLayout:Int):
     RecyclerView.Adapter<ShoolAdapter.ViewHolder>()
@@ -48,8 +47,8 @@ class ShoolAdapter (private val layoutInflater: LayoutInflater, private val scho
 
         Glide.with(layoutInflater.context)
             .load(schools[position].chemin_photo_couverture_ecole)
-            .fallback(R.drawable.icons_university_48px)
-            .error(R.drawable.icons_university_48px)
+            .fallback(R.drawable.arr)
+            .error(R.drawable.arr)
             .into(viewHolder.couverture)
 
         viewHolder.schoolName2.text = item.nom_ecole

@@ -46,7 +46,10 @@ class SchoolFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_school, container, false)
 
         val recycler = view.recycler_school_fragement
-        netWorkData(recycler)
+        //initSchoolRecyclerView(recycler,getSchool())
+
+
+         netWorkData(recycler)
 
 
 
@@ -99,12 +102,16 @@ class SchoolFragment : Fragment() {
 
         recycler.addItemDecoration((sectionItemDecoration))
 
-        recycler.adapter = ShoolAdapter(this.layoutInflater,schools,R.layout.recycler_item_school)
+        val h = setShool(schools)!!
+
+        recycler.adapter = ShoolAdapter(this.layoutInflater,h,R.layout.cell_school)
     }
 
-    private fun setShool(schools: List<School>?) {
+    private fun setShool(schools: List<School>?) : List<School>?{
         this.schools = schools!!
         this.schools.sortedBy { x -> x.nom_ecole }
+
+        return schools
     }
 
     private fun showErrorMsg(message: String?,dialog:Dialog) {
@@ -124,6 +131,28 @@ class SchoolFragment : Fragment() {
         dialog.show()
 
 
+    }
+
+    private fun getSchool():ArrayList<School>{
+        val s = School(1,"Université de douala",context?.resources!!.getString(R.string.lorem),"any","any","any","Ange Raphael","1025","mevaajules1566@mail.com","690981056","1","1","Douala",15f,"any")
+        val h = ArrayList<School>()
+
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+        h.add(s)
+
+        return h
     }
 
 

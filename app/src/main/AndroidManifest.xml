@@ -13,16 +13,14 @@
 			android:supportsRtl = "true"
 			android:theme = "@style/AppTheme"
 			tools:ignore = "GoogleAppIndexingWarning">
-		<activity android:name = ".Activity.ProfileActivity">
 		
-		</activity>
 		<activity android:name = ".Activity.Slider3">
 		</activity>
 		<activity android:name = ".Activity.Slider2">
 		</activity>
-		<activity android:name = ".Activity.Slider1">
+		<activity android:name = ".Activity.Slider1">		
 		</activity>
-		<activity android:name = ".Activity.AnimRecycler">
+		<activity android:name = ".Activity.AnimRecycler">		
 		</activity>
 		<activity android:name = ".Register">
 		</activity>

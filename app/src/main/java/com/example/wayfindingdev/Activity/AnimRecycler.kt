@@ -24,7 +24,7 @@ class AnimRecycler : AppCompatActivity() {
         val sectionItemDecoration = RecyclerSectionItemDecoration(getResources().getDimensionPixelSize(R.dimen.recycler_section_header_height),sticky=true,sectionCallback=getSectionCallback(schools))
         recycler_test.addItemDecoration((sectionItemDecoration))
 
-        recycler_test.adapter = ShoolAdapter(this.layoutInflater,schools,R.layout.recycler_item_school)
+        recycler_test.adapter = ShoolAdapter(this.layoutInflater,schools,R.layout.cell_school)
 
 
     }
