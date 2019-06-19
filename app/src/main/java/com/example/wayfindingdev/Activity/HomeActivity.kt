@@ -1,6 +1,7 @@
 package com.example.wayfindingdev.Activity
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -47,6 +49,16 @@ class HomeActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         setSupportActionBar(toolbar)
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navview  : NavigationView = findViewById(R.id.nav_view)
+       val headerview :View = navview.getHeaderView(0)
+        //val profile :TextView = headerview.findViewById(R.id.textview_header_user_infos)
+        headerview.setOnClickListener{
+
+            val i = Intent(this@HomeActivity, ProfileActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(i)
+
+
+        }
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar, R.string.map, R.string.map
         )

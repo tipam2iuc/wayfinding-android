@@ -88,6 +88,7 @@
 	<string name = "skills">Competences</string>
 	<string name = "certificate">Certifications</string>
 	<string name = "leisure">Loisirs</string>
+	<string name = "contacts">Contacts</string>
 
 
 </resources>
