@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+		android:layout_width = "match_parent"
+		android:layout_height = "match_parent" xmlns:android = "http://schemas.android.com/apk/res/android">
+<android.support.constraint.ConstraintLayout
+		xmlns:android = "http://schemas.android.com/apk/res/android"
+		xmlns:tools = "http://schemas.android.com/tools"
+		xmlns:app = "http://schemas.android.com/apk/res-auto"
+		android:layout_width = "match_parent"
+		android:layout_height = "match_parent"
+		tools:context = ".Activity.ProfileActivity" android:id = "@+id/constraintLayout4">
+
+		
+		
+	<android.support.constraint.ConstraintLayout
+			android:id = "@+id/constraintUser"
+			android:layout_width = "match_parent"
+			android:layout_height = "wrap_content"
+			android:paddingBottom = "24dp"
+			android:background = "@color/textPrimary"
+			app:layout_constraintTop_toTopOf = "parent"
+			app:layout_constraintEnd_toEndOf = "parent"
+			app:layout_constraintStart_toStartOf = "parent">
+		<include
+				android:id = "@+id/id_app_bar_profile"
+				android:layout_height = "wrap_content"
+				android:layout_width = "match_parent"
+				layout = "@layout/app_bar_profile" />
+		
+		<de.hdodenhof.circleimageview.CircleImageView
+				android:id = "@+id/imageview_profile"
+				android:layout_width = "80dp"
+				android:layout_height = "80dp"
+				android:src = "@drawable/etudiant"
+				app:layout_constraintTop_toBottomOf = "@id/id_app_bar_profile"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:layout_margin = "14dp"
+		/>
+		<TextView
+				android:id = "@+id/username"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintStart_toEndOf = "@id/imageview_profile"
+				app:layout_constraintLeft_toRightOf = "@id/imageview_profile"
+				app:layout_constraintTop_toBottomOf = "@id/id_app_bar_profile"
+				android:text = "Mevaa Jules"
+				android:textColor = "@color/white"
+				android:textSize = "24dp"
+				android:layout_margin = "14dp"
+		/>
+		<TextView
+				android:id = "@+id/userdesc"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintStart_toEndOf = "@id/imageview_profile"
+				app:layout_constraintLeft_toRightOf = "@id/imageview_profile"
+				app:layout_constraintTop_toBottomOf = "@id/username"
+				android:text = "Administrateur reseau et Syteme"
+				android:textColor = "@color/white"
+				android:textSize = "14dp"
+				android:layout_marginLeft = "24dp"
+		/>
+	
+	</android.support.constraint.ConstraintLayout>
+	
+
+		
+			
+			<android.support.constraint.ConstraintLayout
+					android:layout_width = "match_parent"
+					android:layout_height = "match_parent"
+					android:paddingTop = "14dp"
+					android:id = "@+id/constraintSkills"
+					android:background = "@color/colorPrimary"
+					app:layout_constraintTop_toBottomOf = "@+id/constraintUser"
+					app:layout_constraintBottom_toBottomOf = "parent"
+					app:layout_constraintStart_toStartOf = "parent"
+					app:layout_constraintEnd_toEndOf = "parent"
+					app:layout_constraintHorizontal_bias = "0.0"
+					app:layout_constraintVertical_bias = "0.0">
+				
+				<ImageView
+						android:id = "@+id/diploma"
+						android:layout_width = "50dp"
+						android:layout_height = "wrap_content"
+						android:src = "@drawable/diploma"
+						app:layout_constraintStart_toStartOf = "parent"
+						app:layout_constraintBottom_toTopOf = "@id/recycler_item_formation"
+						app:layout_constraintRight_toLeftOf = "@id/training"
+				
+				
+				/>
+				<TextView
+						android:id = "@+id/training"
+						android:layout_width = "wrap_content"
+						android:layout_height = "wrap_content"
+						android:text = "@string/formations"
+						android:textSize = "19dp"
+						android:textColor = "@color/textPrimary"
+						app:layout_constraintStart_toEndOf = "@id/diploma"
+						app:layout_constraintBottom_toBottomOf = "@id/separator1"
+						
+						app:layout_constraintEnd_toStartOf = "@id/separator1" />
+				
+				<View
+						android:id = "@+id/separator1"
+						android:layout_width = "wrap_content"
+						android:layout_height = "0.8dp"
+						app:layout_constraintStart_toEndOf = "@id/training"
+						app:layout_constraintRight_toLeftOf = "parent"
+						android:background = "@color/textPrimary"
+						android:layout_marginLeft = "14dp"
+						app:layout_constraintBottom_toBottomOf = "@+id/training"
+						app:layout_constraintTop_toTopOf = "@+id/training" />
+				
+				<android.support.v7.widget.RecyclerView
+						
+						android:id = "@+id/recycler_item_formation"
+						android:layout_width = "match_parent"
+						app:layout_constraintTop_toBottomOf = "@+id/diploma"
+						android:padding = "14dp"
+						
+						android:layout_height = "wrap_content"
+						app:layout_constraintStart_toStartOf = "parent"
+						android:layout_marginStart = "8dp">
+				
+				</android.support.v7.widget.RecyclerView>
+				
+				<ImageView
+						android:id = "@+id/experience"
+						android:layout_width = "50dp"
+						android:layout_height = "wrap_content"
+						android:src = "@drawable/experiences"
+						app:layout_constraintStart_toStartOf = "parent"
+						app:layout_constraintTop_toBottomOf = "@id/recycler_item_formation"
+						app:layout_constraintRight_toLeftOf = "@id/experiencepro"
+				
+				
+				/>
+				<TextView
+						android:id = "@+id/experiencepro"
+						android:layout_width = "wrap_content"
+						android:layout_height = "wrap_content"
+						android:text = "@string/experiences"
+						android:textSize = "19dp"
+						android:textColor = "@color/textPrimary"
+						app:layout_constraintLeft_toRightOf = "@+id/experience"
+						app:layout_constraintBottom_toBottomOf = "@+id/experience"
+						app:layout_constraintTop_toTopOf = "@+id/experience"
+						app:layout_constraintStart_toEndOf = "@+id/experience" />
+				
+				<View
+						android:id = "@+id/separator2"
+						android:layout_width = "wrap_content"
+						android:layout_height = "0.8dp"
+						android:background = "@color/textPrimary"
+						app:layout_constraintBottom_toBottomOf = "@+id/experiencepro"
+						app:layout_constraintTop_toTopOf = "@+id/experiencepro"
+						app:layout_constraintStart_toEndOf = "@+id/experiencepro"
+						android:layout_marginStart = "8dp" />
+				
+				<android.support.v7.widget.RecyclerView
+						android:id = "@+id/recycler_item_experience"
+						app:layout_constraintTop_toBottomOf = "@+id/experience"
+						android:layout_width = "match_parent"
+						android:padding = "14dp"
+						app:layout_constraintStart_toStartOf = "parent"
+						android:layout_height = "wrap_content">
+				</android.support.v7.widget.RecyclerView>
+				
+				<ImageView
+						android:id = "@+id/skills"
+						android:layout_width = "50dp"
+						android:layout_height = "wrap_content"
+						android:src = "@drawable/experiences"
+						
+						app:layout_constraintRight_toLeftOf="@id/competences"
+						android:layout_marginTop = "8dp"
+						app:layout_constraintTop_toBottomOf = "@+id/recycler_item_experience"
+						app:layout_constraintBottom_toBottomOf = "@id/competences"
+				app:layout_constraintStart_toStartOf="parent"
+						
+						 />
+				<TextView
+						android:id = "@+id/competences"
+						android:layout_width = "wrap_content"
+						android:layout_height = "32dp"
+						android:text = "@string/skills"
+						android:textSize = "19dp"
+						android:textColor = "@color/textPrimary"
+						
+						android:layout_marginEnd = "8dp"
+						
+						app:layout_constraintTop_toTopOf="@id/skills"
+						app:layout_constraintLeft_toRightOf = "@+id/skills"
+						app:layout_constraintBottom_toBottomOf = "@+id/skills"
+						
+						app:layout_constraintStart_toEndOf = "@+id/skills" />
+				
+				<View
+						android:id = "@+id/separator3"
+						android:layout_width = "wrap_content"
+						android:layout_height = "0.8dp"
+						android:layout_marginStart = "8dp"
+						android:background = "@color/textPrimary"
+						app:layout_constraintStart_toEndOf="@id/competences"
+						app:layout_constraintBottom_toBottomOf="@id/competences"
+				        app:layout_constraintTop_toTopOf="@id/competences"/>
+				
+				<android.support.v7.widget.RecyclerView
+						android:id = "@+id/recycler_item_skills"
+						android:layout_width = "match_parent"
+						android:padding="14dp"
+						app:layout_constraintStart_toStartOf = "parent"
+						app:layout_constraintTop_toBottomOf = "@+id/skills"
+						android:layout_height = "wrap_content"
+						
+				>
+				</android.support.v7.widget.RecyclerView>
+				
+				
+				
+				
+				
+				<ImageView
+						android:id = "@+id/certificats"
+						android:layout_width = "50dp"
+						android:layout_height = "wrap_content"
+						android:src = "@drawable/experiences"
+						
+						app:layout_constraintRight_toLeftOf="@id/certification"
+						android:layout_marginTop = "8dp"
+						app:layout_constraintTop_toBottomOf = "@+id/recycler_item_skills"
+						app:layout_constraintBottom_toBottomOf = "@id/certification"
+						app:layout_constraintStart_toStartOf="parent"
+				
+				/>
+				<TextView
+						android:id = "@+id/certification"
+						android:layout_width = "wrap_content"
+						android:layout_height = "32dp"
+						android:text = "@string/certificate"
+						android:textSize = "19dp"
+						android:textColor = "@color/textPrimary"
+						android:layout_marginEnd = "8dp"
+						app:layout_constraintTop_toTopOf="@id/certificats"
+						app:layout_constraintLeft_toRightOf = "@+id/certificats"
+						app:layout_constraintBottom_toBottomOf = "@+id/certificats"
+						app:layout_constraintStart_toEndOf = "@+id/certificats" />
+				
+				<View
+						android:id = "@+id/separator4"
+						android:layout_width = "wrap_content"
+						android:layout_height = "0.8dp"
+						android:layout_marginStart = "8dp"
+						android:background = "@color/textPrimary"
+						app:layout_constraintStart_toEndOf="@id/certification"
+						app:layout_constraintBottom_toBottomOf="@id/certification"
+						app:layout_constraintTop_toTopOf="@id/certification"/>
+				
+				<android.support.v7.widget.RecyclerView
+						android:id = "@+id/recycler_item_certification"
+						android:layout_width = "match_parent"
+						android:padding="14dp"
+						app:layout_constraintStart_toStartOf = "parent"
+						app:layout_constraintTop_toBottomOf = "@+id/certificats"
+						android:layout_height = "wrap_content" />
+				
+				
+				
+				
+				
+				
+				<ImageView
+						android:id = "@+id/loisir"
+						android:layout_width = "50dp"
+						android:layout_height = "wrap_content"
+						android:src = "@drawable/experiences"
+						app:layout_constraintRight_toLeftOf="@id/leisure"
+						android:layout_marginTop = "8dp"
+						app:layout_constraintTop_toBottomOf = "@+id/recycler_item_certification"
+						app:layout_constraintBottom_toBottomOf = "@id/leisure"
+						app:layout_constraintStart_toStartOf="parent"
+				
+				/>
+				<TextView
+						android:id = "@+id/leisure"
+						android:layout_width = "wrap_content"
+						android:layout_height = "32dp"
+						android:text = "@string/leisure"
+						android:textSize = "19dp"
+						android:textColor = "@color/textPrimary"
+						app:layout_constraintTop_toTopOf="@id/loisir"
+						app:layout_constraintLeft_toRightOf = "@+id/loisir"
+						app:layout_constraintBottom_toBottomOf = "@+id/loisir"
+						app:layout_constraintStart_toEndOf = "@+id/loisir"
+						android:layout_marginEnd = "8dp"
+						 />
+				
+				<View
+						android:id = "@+id/separator5"
+						android:layout_width = "wrap_content"
+						android:layout_height = "0.8dp"
+						android:layout_marginStart = "8dp"
+						android:background = "@color/textPrimary"
+						app:layout_constraintStart_toEndOf="@id/leisure"
+						app:layout_constraintBottom_toBottomOf="@id/leisure"
+						app:layout_constraintTop_toTopOf="@id/leisure"/>
+				
+				<android.support.v7.widget.RecyclerView
+						android:id = "@+id/recycler_item_leisure"
+						android:layout_width = "match_parent"
+						android:padding="14dp"
+						app:layout_constraintStart_toStartOf = "parent"
+						app:layout_constraintTop_toBottomOf = "@+id/loisir"
+						android:layout_height = "wrap_content" />
+				
+				
+				
+				
+				<ImageView
+						android:id = "@+id/langue"
+						android:layout_width = "50dp"
+						android:layout_height = "wrap_content"
+						android:src = "@drawable/experiences"
+						app:layout_constraintRight_toLeftOf="@id/language"
+						android:layout_marginTop = "8dp"
+						app:layout_constraintTop_toBottomOf = "@+id/recycler_item_leisure"
+						app:layout_constraintBottom_toBottomOf = "@id/language"
+						app:layout_constraintStart_toStartOf="parent"
+				
+				/>
+				<TextView
+						android:id = "@+id/language"
+						android:layout_width = "wrap_content"
+						android:layout_height = "32dp"
+						android:text = "@string/certificate"
+						android:textSize = "19dp"
+						android:textColor = "@color/textPrimary"
+						android:layout_marginEnd = "8dp"
+						app:layout_constraintTop_toTopOf="@id/langue"
+						app:layout_constraintLeft_toRightOf = "@+id/langue"
+						app:layout_constraintBottom_toBottomOf = "@+id/langue"
+						app:layout_constraintStart_toEndOf = "@+id/langue"
+						
+						 />
+				
+				<View
+						android:id = "@+id/separator6"
+						android:layout_width = "wrap_content"
+						android:layout_height = "0.8dp"
+						android:layout_marginStart = "8dp"
+						android:background = "@color/textPrimary"
+						app:layout_constraintStart_toEndOf="@id/language"
+						app:layout_constraintBottom_toBottomOf="@id/language"
+						app:layout_constraintTop_toTopOf="@id/language"/>
+				
+				<android.support.v7.widget.RecyclerView
+						android:id = "@+id/recycler_item_language"
+						android:layout_width = "match_parent"
+						android:padding="14dp"
+						app:layout_constraintStart_toStartOf = "parent"
+						app:layout_constraintTop_toBottomOf = "@+id/langue"
+						android:layout_height = "wrap_content" />
+				
+				
+				
+				<ImageView
+						android:id = "@+id/contact"
+						android:layout_width = "50dp"
+						android:layout_height = "wrap_content"
+						android:src = "@drawable/experiences"
+						app:layout_constraintRight_toLeftOf="@id/contacts"
+						android:layout_marginTop = "8dp"
+						app:layout_constraintTop_toBottomOf = "@+id/recycler_item_language"
+						app:layout_constraintBottom_toBottomOf = "@id/contacts"
+						app:layout_constraintStart_toStartOf="parent"
+				
+				/>
+				<TextView
+						android:id = "@+id/contacts"
+						android:layout_width = "wrap_content"
+						android:layout_height = "32dp"
+						android:text = "@string/certificate"
+						android:textSize = "19dp"
+						android:textColor = "@color/textPrimary"
+						android:layout_marginEnd = "8dp"
+						app:layout_constraintTop_toTopOf="@id/contact"
+						app:layout_constraintLeft_toRightOf = "@+id/contact"
+						app:layout_constraintBottom_toBottomOf = "@+id/contact"
+						app:layout_constraintStart_toEndOf = "@+id/contact"
+				
+				
+				/>
+				
+				<View
+						android:id = "@+id/separator7"
+						android:layout_width = "wrap_content"
+						android:layout_height = "0.8dp"
+						android:layout_marginStart = "8dp"
+						android:background = "@color/textPrimary"
+						app:layout_constraintStart_toEndOf="@id/contacts"
+						app:layout_constraintBottom_toBottomOf="@id/contacts"
+						app:layout_constraintTop_toTopOf="@id/contacts"/>
+				
+				<android.support.v7.widget.RecyclerView
+						android:id = "@+id/recycler_item_contact"
+						android:layout_width = "match_parent"
+						android:padding="14dp"
+						app:layout_constraintStart_toStartOf = "parent"
+						app:layout_constraintTop_toBottomOf = "@+id/contact"
+						android:layout_height = "wrap_content" />
+			
+			</android.support.constraint.ConstraintLayout>
+			</android.support.constraint.ConstraintLayout>
+		
+	
+</android.support.v4.widget.NestedScrollView>

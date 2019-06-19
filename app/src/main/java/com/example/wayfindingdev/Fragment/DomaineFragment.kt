@@ -138,7 +138,7 @@ class DomaineFragment : Fragment() {
     fun initRecyclerDomaine(domaines: List<Domaine>, recyclerView: RecyclerView) {
         val domaineAdapter = DomainePageAdapter(context, domaines)
         recyclerView.adapter = domaineAdapter
-        recyclerView.layoutManager = GridLayoutManager(context, 2)
+        recyclerView.layoutManager = GridLayoutManager(context, 2) as RecyclerView.LayoutManager?
 
     }
 

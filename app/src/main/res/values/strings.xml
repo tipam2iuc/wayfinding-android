@@ -81,6 +81,13 @@
 	<string name = "niveau">Niveau : BAC+</string>
 	<string name = "cmnum">+237</string>
 	<string name = "organise">Organisé par :</string>
+	<string name = "formations">Formations </string>
+	<string name = "year1">2014-2015 </string>
+	<string name = "year2">2016-2016 </string>
+	<string name = "experiences">Experiences Professionnelles</string>
+	<string name = "skills">Competences</string>
+	<string name = "certificate">Certifications</string>
+	<string name = "leisure">Loisirs</string>
 
 
 </resources>
