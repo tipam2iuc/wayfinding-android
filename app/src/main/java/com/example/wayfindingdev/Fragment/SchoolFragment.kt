@@ -82,9 +82,7 @@ class SchoolFragment : Fragment() {
             override fun onResponse(call: Call<SchoolList>, response: Response<SchoolList>) {
                 val b = response.body()
                 if(b != null){
-                    if(b.statut == 1){
-                        initSchoolRecyclerView(recycler,b.schools!!.sortedBy { x->x.nom_ecole })
-                    } else {
+                    if(b.statut == 1) initSchoolRecyclerView(recycler,b.schools!!.sortedBy { x->x.nom_ecole }) else {
                         showErrorMsg(b.message,dialog)
                     }
                 }else{
