@@ -16,6 +16,11 @@
     <item name="color">@color/white</item>
     
     </style>
+    <style name = "SwitchCompatTheme">
+        
+        <item name = "colorControlActivated">#AD7CB6</item>
+        
+    </style>
     
     
     <style name="ContentImageBadgeText" parent="AppTheme">

@@ -9,9 +9,11 @@ import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
+import android.support.v4.view.MenuItemCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.SwitchCompat
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
@@ -31,15 +33,19 @@ import com.example.wayfindingdev.Tools.currentUser
 import kotlinx.android.synthetic.main.activity_home.*
 
 
+
 class HomeActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
     private lateinit var dialog:Dialog
     private lateinit var closeMsg:ImageButton
     private lateinit var msgText:TextView
-
+    private lateinit var switcher: SwitchCompat
+    private lateinit var actionView: View
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var OnNavigationItemReselectedListener: BottomNavigationView.OnNavigationItemSelectedListener
     private lateinit var actif: Fragment
     private lateinit var imageView: ImageView
+    private lateinit var menu: Menu
+    private lateinit var menuitem: MenuItem
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,8 +56,17 @@ class HomeActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navview  : NavigationView = findViewById(R.id.nav_view)
        val headerview :View = navview.getHeaderView(0)
-        //val profile :TextView = headerview.findViewById(R.id.textview_header_user_infos)
-        headerview.setOnClickListener{
+
+
+      menu = nav_view.getMenu()
+        menuitem = menu.findItem(R.id.notifications)
+        actionView = MenuItemCompat.getActionView(menuitem)
+        switcher = actionView.findViewById(R.id.switcher)
+        switcher.isChecked
+
+
+
+            headerview.setOnClickListener{
 
             val i = Intent(this@HomeActivity, ProfileActivity::class.java)
             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)

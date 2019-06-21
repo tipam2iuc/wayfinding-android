@@ -26,6 +26,8 @@
 		</activity>
 		<activity android:name = ".Activity.DetailDomaineActivity">
 		</activity>
+		<activity android:name = ".Activity.ProfileActivity">
+		</activity>
 		<activity android:name = ".Activity.HomeActivity">
 			<intent-filter>
 				<action android:name = "android.intent.action.MAIN" />
